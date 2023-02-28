@@ -1,0 +1,44 @@
+.datepicker{
+    width: 300px;
+}
+.circle{
+    height: 60px;
+    background-color: #ff8a65;
+    width: 60px;
+    display: flex;
+    border-radius: 50px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-wrapper{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.colums-wrapper{
+    margin-top: 50px;
+    margin-bottom:50px;
+}
+
+.section-title{
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 25px;
+    font-weight: 700;
+    color: #4e4039;
+}
+
+.card-suggestions{
+    border: 1px solid #eb5d1e;
+}
