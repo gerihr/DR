@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InsurerDataComponent } from './insurer-data.component';
+import { ErrorPageComponent } from './error-page.component';
 
-describe('InsurerDataComponent', () => {
-  let component: InsurerDataComponent;
-  let fixture: ComponentFixture<InsurerDataComponent>;
+describe('ErrorPageComponent', () => {
+  let component: ErrorPageComponent;
+  let fixture: ComponentFixture<ErrorPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InsurerDataComponent ]
+      declarations: [ ErrorPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InsurerDataComponent);
+    fixture = TestBed.createComponent(ErrorPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

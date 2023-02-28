@@ -1,3 +1,4 @@
+
 <div class="container d-md-flex align-items-center">
   <div class="card box1 shadow-sm p-md-5 p-md-5 p-4">
     <div class="fw-bolder mb-4">
@@ -42,47 +43,11 @@
     </div>
     <ul class="nav nav-tabs mb-3 px-md-4 px-2">
       <li class="nav-item">
-        <a class="nav-link px-2 active" aria-current="page" href="#"
-          >Credit Card</a
+        <label class="nav-link px-2 active" aria-current="page" href="#"
+          >Credit Card</label
         >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-2" href="#">Mobile Payment</a>
-      </li>
-      <li class="nav-item ms-auto">
-        <a class="nav-link px-2" href="#">+ More</a>
       </li>
     </ul>
-    <div class="px-md-5 px-4 mb-4 d-flex align-items-center">
-      <div class="btn btn-success me-4"><span class="fas fa-plus"></span></div>
-      <div
-        class="btn-group"
-        role="group"
-        aria-label="Basic radio toggle button group"
-      >
-        <input
-          type="radio"
-          class="btn-check"
-          name="btnradio"
-          id="btnradio1"
-          autocomplete="off"
-          checked
-        />
-        <label class="btn btn-outline-primary" for="btnradio1"
-          ><span class="pe-1">+</span>5949</label
-        >
-        <input
-          type="radio"
-          class="btn-check"
-          name="btnradio"
-          id="btnradio2"
-          autocomplete="off"
-        />
-        <label class="btn btn-outline-primary" for="btnradio2"
-          ><span class="lpe-1">+</span>3894</label
-        >
-      </div>
-    </div>
     <form action="">
       <div class="row">
         <div class="col-12">
@@ -134,7 +99,7 @@
           </div>
         </div>
         <div class="col-12 px-md-5 px-4 mt-3">
-          <div class="btn btn-primary w-100">Pay $599.00</div>
+          <div class="btn btn-primary w-100" (click)="continue()">Pay $599.00</div>
         </div>
       </div>
     </form>

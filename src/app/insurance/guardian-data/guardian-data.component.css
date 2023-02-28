@@ -1,5 +1,5 @@
 .wrapper{
-    background-color: #eee;
+    background-color: #fef8f5;
 }
 
 .un {
@@ -35,4 +35,7 @@
           font-family: 'Ubuntu', sans-serif;
           font-size: 13px;
           box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+      }
+      .submit:hover{
+        background-color: #ef7f4d;
       }

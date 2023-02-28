@@ -12,6 +12,6 @@ export class StartInsuranceComponent implements OnInit {
   ngOnInit(): void {}
 
   continue() {
-    this.router.navigate(['/get-insurance']);
+    this.router.navigate(['/packageSelection']);
   }
 }

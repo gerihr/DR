@@ -12,6 +12,6 @@ export class InsurerDataComponent implements OnInit {
   ngOnInit(): void {}
 
   continue() {
-    this.router.navigate(['/guardin-data']);
+    this.router.navigate(['/guardianData']);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-insurance',
@@ -7,17 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetInsuranceComponent implements OnInit {
 
-  duration = [
-    {value: '0', viewValue: '6 месеца'},
-    {value: '1', viewValue: '1 година'},
-    {value: '3', viewValue: '3 години'},
-  ];
-  startDate: any
-  constructor() { }
+ 
+  chosenPackage: any
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-   this.startDate = new Date(1990, 0, 1);
 
+  }
+
+  choosePackage(packIndex: any){
+   this.chosenPackage = packIndex
+  }
+
+  continue(){
+    this.router.navigate(['/payment']);
   }
 
 }

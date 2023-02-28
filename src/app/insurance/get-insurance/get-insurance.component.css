@@ -51,7 +51,6 @@ transition: .5s;
   width: 100%;
   height: 40%;
   background: rgba(255, 255, 255, .1);
-z-index: 1;
 -webkit-transform: skewY(-5deg) scale(1.5);
         transform: skewY(-5deg) scale(1.5);
 }
@@ -117,4 +116,19 @@ font-size: 16px;
 }
 .card a:hover{
     text-decoration: none;
+}
+
+.submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #eb5d1e;
+    background: white;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    z-index: 1;
 }

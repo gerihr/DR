@@ -17,7 +17,7 @@
 .card.box1 {
     width: 350px;
     height: 500px;
-    background-color:#eb5d1e;
+    background-color:#fa7537;
     color: white;
     border-radius: 0
 }
@@ -37,7 +37,7 @@
     width: 20px;
     background-color: transparent;
     border: none;
-    color:#eb5d1e
+    color:#fa7537
 }
 
 .box2 .btn.btn-primary.bar:hover {
@@ -45,7 +45,7 @@
 }
 
 .box1 .btn.btn-primary {
-    background-color: #eb5d1e;
+    background-color: #fa7537;
     width: 45px;
     height: 45px;
     display: flex;
@@ -56,7 +56,7 @@
 
 .box1 .btn.btn-primary:hover {
     background-color: #f6f8f7;
-    color: #eb5d1e
+    color: #fa7537
 }
 
 .btn.btn-success {
@@ -83,14 +83,9 @@
     font-size: 14px
 }
 
-.nav.nav-tabs .nav-item .nav-link:hover {
-    border-bottom: 2px solid#eb5d1e;
-    color: #05cf48
-}
-
 .nav.nav-tabs .nav-item .nav-link.active {
     border: none;
-    border-bottom: 2px solid#eb5d1e
+    border-bottom: 2px solid#fa7537
 }
 
 .form-control {
@@ -119,7 +114,7 @@ img {
     position: absolute;
     right: 0px;
     bottom: 9px;
-    color: #eb5d1e;
+    color: #fa7537;
     cursor: pointer;
     transition: 0.3s;
     font-size: 14px
@@ -147,7 +142,7 @@ img {
 .btn-outline-primary.dropdown-toggle.show,
 .btn-outline-primary:active {
     color: white;
-    background-color:#eb5d1e;
+    background-color:#fa7537;
     box-shadow: none;
     border: 1px solid #ddd
 }
@@ -172,12 +167,12 @@ form .btn.btn-primary {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#eb5d1e;
+    background-color:#fa7537;
     border: 1px solid #ddd
 }
 
 form .btn.btn-primary:hover {
-    background-color: #05cf48
+    background-color: #ef7f4d
 }
 
 @media (max-width:750px) {

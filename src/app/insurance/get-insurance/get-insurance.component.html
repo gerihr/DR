@@ -40,7 +40,8 @@
                             <li> <i class="fa fa-times" aria-hidden="true"></i> Live Support </li>
                             </ul>
                           </div>
-                          <a href="#">Order Now </a>
+                          <button type="button" class="btn submit" (click)="choosePackage(1)" *ngIf="chosenPackage!==1">Избери пакет</button>
+                          <button type="button" class="btn submit" (click)="continue()" *ngIf="chosenPackage===1">Продължи</button>
                         </div>
                       </div>
                       <!-- END Col one -->
@@ -61,7 +62,9 @@
                             <li> <i class="fa fa-times" aria-hidden="true"></i> Live Support </li>
                             </ul>
                           </div>
-                          <a href="#">Order Now </a>
+                          <button type="button" class="btn submit" (click)="choosePackage(2)" *ngIf="chosenPackage!==2">Избери пакет</button>
+                          <button type="button" class="btn submit" (click)="continue()" *ngIf="chosenPackage===2">Продължи</button>
+
                         </div>
                       </div>
                       <!-- END Col two -->
@@ -82,7 +85,8 @@
                             <li> <i class="fa fa-check" aria-hidden="true"></i> Live Support </li>
                             </ul>
                           </div>
-                          <a href="#">Order Now </a>
+                          <button type="button" class="btn submit" (click)="choosePackage(3)" *ngIf="chosenPackage!==3">Избери пакет</button>
+                          <button type="button" class="btn submit" (click)="continue()" *ngIf="chosenPackage===3">Продължи</button>
                         </div>
                       </div>
                       <!-- END Col three -->
