@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #212529;
 }
 
@@ -365,7 +365,7 @@ h6,
 
 #hero h2 {
   color: #a08f86;
-  margin: 15px 0 0 0;
+  margin: 20px 0 0 0;
   font-size: 24px;
 }
 
@@ -462,7 +462,12 @@ h6,
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding-top: 60px;
+ padding-top: 60px;
+  overflow: hidden;
+}
+
+.section-home{
+  padding-top: 0px;
   overflow: hidden;
 }
 
@@ -856,7 +861,6 @@ section {
 .faq .faq-list .question {
   display: block;
   position: relative;
-  font-family: #eb5d1e;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;

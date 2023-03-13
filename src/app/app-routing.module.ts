@@ -8,6 +8,7 @@ import { PaymentComponent } from './insurance/payment/payment.component';
 import { StartInsuranceComponent } from './insurance/start-insurance/start-insurance.component';
 import { InsurerDataComponent } from './insurance/insurer-data/insurer-data.component';
 import { SuccessfulPaymentComponent } from './insurance/successful-payment/successful-payment.component';
+import { NewClaimComponent } from './claims/new-claim/new-claim.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +19,8 @@ const routes: Routes = [
   {path: 'payment', component: PaymentComponent},
   {path: 'successful', component: SuccessfulPaymentComponent},
   {path: 'error', component: ErrorPageComponent},
+  {path: 'new-claim', component: NewClaimComponent},
+
 
 
 ];

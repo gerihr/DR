@@ -1,0 +1,41 @@
+
+        <div class="card  bg-white shadow p-5 " *ngIf="successful === true"> 
+            <div class="mb-4 text-center">
+                <div class="row justify-content-center">
+                    <div
+                      style="
+                        border-radius: 200px;
+                        height: 200px;
+                        width: 200px;
+                        background: #f7eae0;
+                        margin: 0 auto 30px;
+                      "
+                    >
+                      <i class="checkmark" >✓</i>
+
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <h1  >Вашата претенция <br> беше заявена успешно.</h1>
+                <p>Очаквайте отговор от нашия екип до три работни дни. <br> Можете да намерите вашата претенция в профила Ви.</p>
+                <button class="btn continue">Върни се в началото</button>
+            </div>
+        </div>
+  
+
+
+        <div class="card  bg-white shadow p-5 " *ngIf="successful !== true">
+            <div class="mb-4 text-center">
+                <div class="row justify-content-center">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/12/21/29/false-2061132__340.png" style="max-width:200px; max-height: 200px;" />
+
+                </div>
+            </div>
+            <div class="text-center">
+                <h1  >Възникна грешка!</h1>
+                <p>Моля, опитайте отново</p>
+                <button class="btn continue">Върни се в началото</button>
+            </div>
+        </div>
+  

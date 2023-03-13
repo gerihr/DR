@@ -7,19 +7,33 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-7 col-xl-6 order-2 order-lg-1">
   
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Вашите данни</p>
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">Вашите данни</p>
   
-                  <form class="mx-1 mx-md-4">
-  
-                    <input class="un " type="text" align="center" placeholder="Име">
-                    <input class="un " type="text" align="center" placeholder="Презиме">
-                    <input class="un " type="text" align="center" placeholder="Фамилия">
-                    <input class="un " type="text" align="center" placeholder="Адрес">
-                    <input class="un " type="text" align="center" placeholder="Град">
-                    <input class="un " type="text" align="center" placeholder="Пощенски код">
-                    <input class="un " type="text" align="center" placeholder="Имейл">
-                    <input type="text" class="un" placeholder="Телефонен номер">
-                 
+                  <form class="mx-1 mx-md-4"style="display: flex; flex-direction: column; align-items: center">
+
+                    <mat-form-field class="example-full-width field" >
+                      <mat-label>ЕГН
+                      </mat-label>
+                      <input matInput>
+                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <mat-label>Име</mat-label>
+                      <input matInput>
+                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <mat-label>Презиме</mat-label>
+                      <input matInput>
+                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <mat-label>Фамилия</mat-label>
+                      <input matInput>
+                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <mat-label>Град</mat-label>
+                      <input matInput>
+                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <mat-label>Адрес</mat-label>
+                      <input matInput>
+                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <mat-label>Телефонен номер</mat-label>
+                      <input matInput>
+                    </mat-form-field>
     
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                       <button type="button" class="btn submit" (click)="continue()">Продължи</button>
@@ -28,9 +42,9 @@
                   </form>
   
                 </div>
-                <div class="col-md-10 col-lg-5 col-xl-6 d-flex align-items-center order-1 order-lg-2">
+                <div class="col-md-10 col-lg-5 col-xl-6 image-wrapper order-1 order-lg-2">
   
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  <img src="assets/img/pages-images-vector-16-768x624.png"
                     class="img-fluid" alt="Sample image">
   
                 </div>

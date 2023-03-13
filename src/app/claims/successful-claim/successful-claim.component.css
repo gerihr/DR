@@ -1,0 +1,23 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+.bg-white{
+    border: solid #ee7843 2px;
+    width: 500px;
+}
+.continue{
+    color: #ee7843;
+    border-color: #ee7843
+}
+.continue:hover {
+    color: #ee7843;
+    background-color: #fef8f5;
+    border-color: #ee7843
+}
+i {
+    color: #eb5d1e;
+    font-size: 100px;
+    line-height: 200px;
+  }
+
+

@@ -14,6 +14,12 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { PaymentComponent } from './insurance/payment/payment.component';
 import { StartInsuranceComponent } from './insurance/start-insurance/start-insurance.component';
 import { SuccessfulPaymentComponent } from './insurance/successful-payment/successful-payment.component';
+import { FooterComponent } from './footer/footer.component';
+import { NewClaimComponent } from './claims/new-claim/new-claim.component';
+import { SuccessfulClaimComponent } from './claims/successful-claim/successful-claim.component';
+import { MyProfileComponent } from './customer-profile/my-profile/my-profile.component';
+import { MyClaimDetailsComponent } from './customer-profile/my-claim-details/my-claim-details.component';
+import { InsurerDataComponent } from './insurance/insurer-data/insurer-data.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +29,16 @@ import { SuccessfulPaymentComponent } from './insurance/successful-payment/succe
     ContactsComponent,
     GetInsuranceComponent,
     GuardianDataComponent,
+    InsurerDataComponent,
     PaymentComponent,
     StartInsuranceComponent,
     ErrorPageComponent,
-    SuccessfulPaymentComponent
+    SuccessfulPaymentComponent,
+    FooterComponent,
+    NewClaimComponent,
+    SuccessfulClaimComponent,
+    MyProfileComponent,
+    MyClaimDetailsComponent
   ],
   imports: [
     BrowserModule,

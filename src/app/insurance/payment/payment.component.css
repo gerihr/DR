@@ -4,8 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
-    font-family: 'Montserrat', sans-serif
+    list-style: none; 
+    font-family: "Helvetica Neue", sans-serif;
+
 }
 
 .container {
@@ -17,7 +18,7 @@
 .card.box1 {
     width: 350px;
     height: 500px;
-    background-color:#fa7537;
+    background-color:#EF814F;
     color: white;
     border-radius: 0
 }
@@ -30,14 +31,14 @@
 }
 
 .text {
-    font-size: 13px
+    font-size: 14px
 }
 
 .box2 .btn.btn-primary.bar {
     width: 20px;
     background-color: transparent;
     border: none;
-    color:#fa7537
+    color:#EF814F
 }
 
 .box2 .btn.btn-primary.bar:hover {
@@ -45,7 +46,7 @@
 }
 
 .box1 .btn.btn-primary {
-    background-color: #fa7537;
+    background-color: #EF814F;
     width: 45px;
     height: 45px;
     display: flex;
@@ -56,7 +57,7 @@
 
 .box1 .btn.btn-primary:hover {
     background-color: #f6f8f7;
-    color: #fa7537
+    color: #EF814F
 }
 
 .btn.btn-success {
@@ -85,7 +86,7 @@
 
 .nav.nav-tabs .nav-item .nav-link.active {
     border: none;
-    border-bottom: 2px solid#fa7537
+    border-bottom: 2px solid#EF814F
 }
 
 .form-control {
@@ -114,7 +115,7 @@ img {
     position: absolute;
     right: 0px;
     bottom: 9px;
-    color: #fa7537;
+    color: #EF814F;
     cursor: pointer;
     transition: 0.3s;
     font-size: 14px
@@ -142,7 +143,7 @@ img {
 .btn-outline-primary.dropdown-toggle.show,
 .btn-outline-primary:active {
     color: white;
-    background-color:#fa7537;
+    background-color:#EF814F;
     box-shadow: none;
     border: 1px solid #ddd
 }
@@ -167,13 +168,19 @@ form .btn.btn-primary {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#fa7537;
-    border: 1px solid #ddd
+    background-color:#EF814F;
+    border: 1px solid #ddd;
+    border-radius: 50px;
 }
 
 form .btn.btn-primary:hover {
-    background-color: #ef7f4d
+    background-color: white;
+    color: #EF814F;
+    border: 1px solid #EF814F
+
 }
+
+
 
 @media (max-width:750px) {
     .container {
