@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-my-profile',
-  templateUrl: './my-profile.component.html',
-  styleUrls: ['./my-profile.component.css']
+  selector: 'app-profile-card-item',
+  templateUrl: './profile-card-item.component.html',
+  styleUrls: ['./profile-card-item.component.css']
 })
-export class MyProfileComponent implements OnInit {
-
-  personalData : any;
-  isEditing = false;
+export class ProfileCardItemComponent implements OnInit {
 
   constructor() { }
+  
+  personalData : any;
+  isEditing = false;
 
   ngOnInit(): void {
     const form = new FormGroup({
@@ -24,6 +24,7 @@ export class MyProfileComponent implements OnInit {
     });
     
   }
+
   onEditing(){
     this.isEditing=!this.isEditing
   }

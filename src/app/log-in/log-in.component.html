@@ -1,0 +1,44 @@
+<section class="section">
+    <div class="container">
+        <h2 class="login-title">Добре дошли</h2>
+    
+        <form class="login-form">
+          <div>
+            <label for="name">Име </label>
+            <input
+                   id="name"
+                   type="text"
+                   placeholder="Eren Buruk"
+                   name="name"
+                   required
+                   />
+          </div>
+    
+          <div>
+            <label for="email">Имейл </label>
+            <input
+                   id="email"
+                   type="email"
+                   placeholder="me@example.com"
+                   name="email"
+                   required
+                   />
+          </div>
+    
+          <div>
+            <label for="password">Парола </label>
+            <input
+                   id="password"
+                   type="password"
+                   placeholder="password"
+                   name="password"
+                   required
+                   />
+          </div>
+    
+          <button class="btn continue" type="submit" value="Log in" (click)="toMyProfile()">
+            Продължи
+          </button>
+        </form>
+    </div>
+</section>

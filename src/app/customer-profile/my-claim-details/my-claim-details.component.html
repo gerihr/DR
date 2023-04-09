@@ -1,1 +1,27 @@
-<p>my-claim-details works!</p>
+    <section>
+    <div class="header-wrapper">
+        <div class="inner-wrapper">
+          <p class="header">Моите претенции</p>
+          <div class="teab-wrapper" >
+            <p type="button" (click)="activateTab(1)" [ngClass]="currentIndex == 1 ? 'tab active' : ' tab unactive'">Отворени</p>
+            <p type="button"  (click)="activateTab(2)" [ngClass]="currentIndex == 2 ?'tab active' : ' tab unactive'">Приключени</p>
+          </div>
+        </div>
+            <button type="button" class="header-button">
+            <span class="button-text" (click)="newClaim()">Заяви нова претенция
+            </span>
+          </button>
+      </div>
+              <div class="list-wrapper" *ngIf="currentIndex == 2">
+                <app-claims-list-item>
+              </app-claims-list-item>
+              <app-claims-list-item>
+            </app-claims-list-item>
+            </div>  
+     
+            <div class="list-wrapper" *ngIf="currentIndex == 1">
+           
+        <b>Няма отворени претенции</b>
+          </div>  
+
+        </section>

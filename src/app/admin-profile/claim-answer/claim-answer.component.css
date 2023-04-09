@@ -1,0 +1,5 @@
+::ng-deep .mat-form-field-infix{
+    width: 550px !important;
+    font-size: 20px;
+    height: 170px;
+}

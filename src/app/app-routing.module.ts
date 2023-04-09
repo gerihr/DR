@@ -9,6 +9,12 @@ import { StartInsuranceComponent } from './insurance/start-insurance/start-insur
 import { InsurerDataComponent } from './insurance/insurer-data/insurer-data.component';
 import { SuccessfulPaymentComponent } from './insurance/successful-payment/successful-payment.component';
 import { NewClaimComponent } from './claims/new-claim/new-claim.component';
+import { MyProfileComponent } from './customer-profile/my-profile/my-profile.component';
+import { ClaimsListItemComponent } from './customer-profile/claims-list-item/claims-list-item.component';
+import { MyClaimDetailsComponent } from './customer-profile/my-claim-details/my-claim-details.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { AdminPageClaimsComponent } from './admin-profile/admin-page-claims/admin-page-claims.component';
+import { AdminClaimDetailsComponent } from './admin-profile/admin-claim-details/admin-claim-details.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -20,6 +26,12 @@ const routes: Routes = [
   {path: 'successful', component: SuccessfulPaymentComponent},
   {path: 'error', component: ErrorPageComponent},
   {path: 'new-claim', component: NewClaimComponent},
+  {path: 'my-profile', component: MyProfileComponent},
+  {path: 'my-claims', component: MyClaimDetailsComponent},
+  {path: 'admin-claims', component: AdminPageClaimsComponent},
+  {path: 'claim-detail', component: AdminClaimDetailsComponent},
+  {path: 'login', component: LogInComponent},
+
 
 
 

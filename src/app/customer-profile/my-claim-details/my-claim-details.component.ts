@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-claim-details',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyClaimDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  currentIndex :number = 2;
 
   ngOnInit(): void {
+  }
+
+  newClaim(){
+    this.router.navigate(['/new-claim']);
+  }
+
+  activateTab(index:number){
+    this.currentIndex = index
   }
 
 }

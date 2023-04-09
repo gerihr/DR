@@ -6,9 +6,9 @@
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">
-                    <!-- <p class="header-text"> Полица Nº021555548/584/125</p>
-                        <div class="subheader-text">от 11.03.2023 до 10.03.2024</div>  -->
-                        <p class="header-text"> Данни на титуляр</p>
+                    <p class="header-text"> Полица Nº021555548/584/125</p>
+                        <div class="subheader-text">от 11.03.2023 до 10.03.2024</div> 
+
                 </div>
                   <div class="info-box">
                     <div >
@@ -89,42 +89,74 @@
           <div class="card text-black" style="border-radius: 25px; margin: 25px">
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
-                <!-- <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">
+                <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">
                     <p> Моите данни</p> 
-                         <div>
+                        <div>
                             <div type="button" (click)="onEditing()" *ngIf="!isEditing"> <mat-icon>edit</mat-icon></div>
                             <div type="button"  (click)="onEditing()" *ngIf="isEditing"><mat-icon>done</mat-icon></div>
                         </div>
-                </div> -->
-                <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">
-                    <p class="header-text"> Полица Nº021555548/584/125</p>
-                        <div class="subheader-text">от 11.03.2023 до 10.03.2024</div> 
-
                 </div>
                   <div class="info-box">
                     <div >
                         <div class="info-line">
                             <div>
                             <p> ЕГН  </p>
+                            <p> Име</p>
+                            <p> Асоцирани <br> лица </p>
                             </div>
                             
                             <div>
-                                <div class="info-data"> 0548187551 </div>
+                                <div class="info-data"> 0049137550 </div>
+                                <div class="info-data"> Гери Христозова</div>
+                                <div class="kids-column">
+                                    <span>Мария Иванова</span>
+                                </div>
                             </div>
 
                         </div>
                     </div>
 
-                     <div class="not-editing">
+                     <div class="not-editing" *ngIf="!isEditing">
                         <div class="info-line">
                             <div>
-                            <p>Име </p>
+                            <p> Имелй  </p>
+                            <p> Адрес</p>
+                            <p> Телефонен <br> номер </p>
                             </div>
                             
                             <div>
-                                <div class="info-data">Мария Иванова </div>
+                                <div class="info-data"> geri.hristozova@abv.bg </div>
+                                <div class="info-data"> жк. Студентски град, София</div>
+                                <div class="info-data"> 088873826</div>
                             </div>
 
+                        </div>
+                    </div>
+
+                    <div class="editing-section" *ngIf="isEditing">
+                        <div class="info-line editing">
+                            <p> Имейл</p>                        
+                        <mat-form-field class="example-full-width field " >
+                            <mat-label>Имейл
+                            </mat-label>
+                            <input matInput>
+                          </mat-form-field>
+                    </div>
+                        <div class="info-line editing">
+                            <p> Телефонен <br> номер </p>
+                            <mat-form-field class="example-full-width field " >
+                                <mat-label>Телефонен номер
+                                </mat-label>
+                                <input matInput>
+                              </mat-form-field>
+                        </div>
+                        <div class="info-line editing">
+                            <p>Адрес </p>
+                            <mat-form-field class="example-full-width field " >
+                                <mat-label>Адрес
+                                </mat-label>
+                                <input matInput>
+                              </mat-form-field>
                         </div>
                     </div>
                   </div>

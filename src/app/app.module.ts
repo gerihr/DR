@@ -20,6 +20,12 @@ import { SuccessfulClaimComponent } from './claims/successful-claim/successful-c
 import { MyProfileComponent } from './customer-profile/my-profile/my-profile.component';
 import { MyClaimDetailsComponent } from './customer-profile/my-claim-details/my-claim-details.component';
 import { InsurerDataComponent } from './insurance/insurer-data/insurer-data.component';
+import { ClaimsListItemComponent } from './customer-profile/claims-list-item/claims-list-item.component';
+import { ProfileCardItemComponent } from './customer-profile/profile-card-item/profile-card-item.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { AdminPageClaimsComponent } from './admin-profile/admin-page-claims/admin-page-claims.component';
+import { AdminClaimDetailsComponent } from './admin-profile/admin-claim-details/admin-claim-details.component';
+import { ClaimAnswerComponent } from './admin-profile/claim-answer/claim-answer.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,13 @@ import { InsurerDataComponent } from './insurance/insurer-data/insurer-data.comp
     NewClaimComponent,
     SuccessfulClaimComponent,
     MyProfileComponent,
-    MyClaimDetailsComponent
+    MyClaimDetailsComponent,
+    ClaimsListItemComponent,
+    ProfileCardItemComponent,
+    LogInComponent,
+    AdminPageClaimsComponent,
+    AdminClaimDetailsComponent,
+    ClaimAnswerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,79 @@
+  
+  .container {
+    width: 400px;
+    margin: auto;
+    padding: 36px 48px 48px 48px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 11px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+    
+  
+  .login-title {
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 1px solid #ee7843;
+  }
+  
+  .login-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 9px;
+    border: 1px solid #eb5d1e;
+    background-color: white;
+  }
+  
+  .login-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(253, 242, 233, 0.5);
+  }
+  
+  .continue{
+    background-color: #ee7843;
+    color: #fef8f5;
+    border-color: #ee7843
+}
+.continue:hover {
+    color: #ee7843;
+    background-color: #fef8f5;
+    border-color: #ee7843
+}
+  
+  .btn,
+  .btn:link,
+  .btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 9px;
+    border: none;
+  
+    cursor: pointer;
+    font-family: inherit;
+  
+    transition: all 0.3s;
+  }
+  
+  button {
+    outline: 1px solid #f48982;
+  }
+  
+  .btn--form:hover {
+    background-color: #fdf2e9;
+    color: #f48982;
+  }
