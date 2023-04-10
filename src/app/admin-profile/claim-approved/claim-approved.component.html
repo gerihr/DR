@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+    <p class="sum">
+        Максималната остатъчна сума е 210лв
+    </p>
+    <mat-form-field class="example-full-width field" >
+        <mat-label>Въведете сума на претенцията</mat-label>
+        <input matInput currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',', align: 'left' }" > <span style="margin-left:10px;"> лева</span>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button>Изпрати</button>
+</div>

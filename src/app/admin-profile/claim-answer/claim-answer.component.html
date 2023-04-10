@@ -1,17 +1,8 @@
-<div mat-dialog-content *ngIf="declined==false">
-<p>
-    Максималната остатъчна сума е 210лв
-</p>
-<mat-form-field class="example-full-width field" >
-    <mat-label>Въведете сума на претенцията</mat-label>
-    <input matInput>
-  </mat-form-field>
-</div>
 
-<div mat-dialog-content *ngIf="declined==true">
+<div mat-dialog-content>
         <mat-form-field class="example-full-width">
             <mat-label>Отговор на клиента</mat-label>
-            <textarea matInput></textarea>
+            <textarea matInput ></textarea>
           </mat-form-field>
     </div>
     <div mat-dialog-actions>

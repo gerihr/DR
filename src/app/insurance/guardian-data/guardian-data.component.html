@@ -7,37 +7,42 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-7 col-xl-6 order-2 order-lg-1">
   
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">Вашите данни</p>
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">Данни на родител/настойник</p>
   
-                  <form class="mx-1 mx-md-4"style="display: flex; flex-direction: column; align-items: center">
+                  <form class="mx-1 mx-md-4"style="display: flex; flex-direction: column; align-items: center" [formGroup]="form">
 
                     <mat-form-field class="example-full-width field" >
                       <mat-label>ЕГН
                       </mat-label>
-                      <input matInput>
+                      <input  formControlName="egn" matInput minlength="10" maxlength="10">
+                      <mat-error *ngIf="this.form.controls.egn.errors?.personalId">
+                        Невалидно ЕГН
+                      </mat-error>
                     </mat-form-field><mat-form-field class="example-full-width field" >
                       <mat-label>Име</mat-label>
-                      <input matInput>
+                      <input matInput formControlName="name" pattern="[а-яА-Я]">
                     </mat-form-field><mat-form-field class="example-full-width field" >
                       <mat-label>Презиме</mat-label>
-                      <input matInput>
+                      <input matInput formControlName="middleName" pattern="[а-яА-Я]">
                     </mat-form-field><mat-form-field class="example-full-width field" >
                       <mat-label>Фамилия</mat-label>
-                      <input matInput>
-                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <input matInput formControlName="lastName" pattern="[а-яА-Я]">
+                    </mat-form-field>     <mat-form-field >
                       <mat-label>Град</mat-label>
-                      <input matInput>
-                    </mat-form-field><mat-form-field class="example-full-width field" >
+                      <mat-select formControlName="city">
+                        <mat-option *ngFor="let city of cities.cities" [value]="city.name">{{city.name}}</mat-option>
+                      </mat-select>
+                    </mat-form-field><mat-form-field class="example-full-width field">
                       <mat-label>Адрес</mat-label>
-                      <input matInput>
+                      <input matInput formControlName="address" pattern="[а-яА-ЯЁёIVX0-9-$&+,:;=?@#|^'<>.^*()%!№_-~\/\\[\]\x22 ]*">
                     </mat-form-field><mat-form-field class="example-full-width field" >
                       <mat-label>Телефонен номер</mat-label>
-                      <input matInput>
+                      <input matInput formControlName="phoneNumber" pattern="08[789]\d{7}">
                     </mat-form-field>
-                    <mat-form-field class="example-full-width field" >
-                      <mat-label>Имейл</mat-label>
-                      <input matInput>
-                    </mat-form-field>
+                  <mat-form-field class="example-full-width field">
+                    <mat-label>Имейл</mat-label>
+                    <input matInput formControlName="email">
+                  </mat-form-field>
     
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                       <button type="button" class="btn submit" (click)="continue()">Продължи</button>

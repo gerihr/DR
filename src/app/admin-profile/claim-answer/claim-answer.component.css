@@ -1,5 +1,9 @@
-::ng-deep .mat-form-field-infix{
+textarea{
     width: 550px !important;
-    font-size: 20px;
-    height: 170px;
+    font-size: 20px !important;
+    height: 150px !important;
+}
+
+.example-full-width{
+    width: 500px !important;
 }

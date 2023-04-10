@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'my-profile', component: MyProfileComponent},
   {path: 'my-claims', component: MyClaimDetailsComponent},
   {path: 'admin-claims', component: AdminPageClaimsComponent},
-  {path: 'claim-detail', component: AdminClaimDetailsComponent},
+  {path: 'claim-details', component: AdminClaimDetailsComponent},
   {path: 'login', component: LogInComponent},
 
 

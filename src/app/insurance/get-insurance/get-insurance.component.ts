@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faStarOfLife } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-get-insurance',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class GetInsuranceComponent implements OnInit {
 
- 
+ icon = faStarOfLife;
   chosenPackage: any
   constructor(private router: Router) {}
 

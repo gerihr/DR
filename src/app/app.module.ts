@@ -26,6 +26,11 @@ import { LogInComponent } from './log-in/log-in.component';
 import { AdminPageClaimsComponent } from './admin-profile/admin-page-claims/admin-page-claims.component';
 import { AdminClaimDetailsComponent } from './admin-profile/admin-claim-details/admin-claim-details.component';
 import { ClaimAnswerComponent } from './admin-profile/claim-answer/claim-answer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ClaimApprovedComponent } from './admin-profile/claim-approved/claim-approved.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
   declarations: [
@@ -50,15 +55,19 @@ import { ClaimAnswerComponent } from './admin-profile/claim-answer/claim-answer.
     LogInComponent,
     AdminPageClaimsComponent,
     AdminClaimDetailsComponent,
-    ClaimAnswerComponent
+    ClaimAnswerComponent,
+    ClaimApprovedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    CurrencyMaskModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
