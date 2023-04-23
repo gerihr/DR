@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-profile',
@@ -11,7 +12,7 @@ export class MyProfileComponent implements OnInit {
   personalData : any;
   isEditing = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     const form = new FormGroup({
@@ -26,6 +27,10 @@ export class MyProfileComponent implements OnInit {
   }
   onEditing(){
     this.isEditing=!this.isEditing
+  }
+
+  toMyClaims(egn:any){
+    this.router.navigate(['/my-claims',  btoa(egn) ]);
   }
 
 }

@@ -16,6 +16,7 @@
     font-weight: 600;
     text-align: center;
     border-bottom: 1px solid #ee7843;
+    color: #4e4039;
   }
   
   .login-form {
@@ -72,8 +73,21 @@
   button {
     outline: 1px solid #f48982;
   }
+
+  i{
+    display: flex;
+    align-items: center;
+  }
   
   .btn--form:hover {
     background-color: #fdf2e9;
     color: #f48982;
+  }
+
+  /* ::ng-deep .mat-form-field-underline{
+    display: none !important;
+  } */
+
+  ::ng-deep .mat-form-field-infix{
+    width: 290px !important;
   }

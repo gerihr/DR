@@ -3,29 +3,29 @@
                 <div class="container-fluid">
                   <div class="container">
                     <div class="row">
-                      <div class="col-sm-4">
+                      <div class="col-sm-4" *ngFor="let pack of packageList">
                         <div class="card text-center">
                           <div class="title">
-                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                            <h2>Комфорт</h2>
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <h2>{{pack.packType}}</h2>
                           </div>
                           <div class="price">
-                            <h4>25 <span>лв.</span></h4>
+                            <h4><b>{{pack.price}}</b><span>лв.</span></h4>
                           </div>
                           <div class="option">
                             <ul>
-                            <li> <i class="fa fa-check" aria-hidden="true"></i> Извънболнична помощ - 450 лв.</li>
-                            <li> <i class="fa fa-check" aria-hidden="true"></i> Болнична помощ - 2500 лв. </li>
-                            <li> <i class="fa fa-check" aria-hidden="true"></i> Дентална помощ  - 100 лв.</li>
-                            <li> <i class="fa fa-times" aria-hidden="true"></i> ЗДРАВНИ СТОКИ - 100лв. </li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> Извънболнична помощ - <span>{{pack.patient}}</span>лв.</li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> Болнична помощ -  <span>{{pack.hospital}}</span>лв. </li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> Дентална помощ  -  <span>{{pack.dental}}</span>лв.</li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> ЗДРАВНИ СТОКИ -  <span>{{pack.goods}}</span>лв. </li>
                             </ul>
                           </div>
-                          <button type="button" class="btn submit" (click)="choosePackage(1)" *ngIf="chosenPackage!==1">Избери пакет</button>
-                          <button type="button" class="btn submit" (click)="continue()" *ngIf="chosenPackage===1">Продължи</button>
+                          <button type="button" class="btn submit" (click)="choosePackage(pack.index)" *ngIf="chosenPackage!==pack.index">Избери пакет</button>
+                          <button type="button" class="btn submit" (click)="continue(pack)" *ngIf="chosenPackage===pack.index">Продължи</button>
                         </div>
                       </div>
                       <!-- END Col one -->
-                      <div class="col-sm-4">
+                      <!-- <div class="col-sm-4">
                         <div class="card text-center">
                           <div class="title">
                             <i class="fa fa-plane" aria-hidden="true"></i>
@@ -46,9 +46,9 @@
                           <button type="button" class="btn submit" (click)="continue()" *ngIf="chosenPackage===2">Продължи</button>
 
                         </div>
-                      </div>
+                      </div> -->
                       <!-- END Col two -->
-                      <div class="col-sm-4">
+                      <!-- <div class="col-sm-4">
                         <div class="card text-center">
                           <div class="title">
                             <i class="fa fa-rocket" aria-hidden="true"></i>
@@ -68,7 +68,7 @@
                           <button type="button" class="btn submit" (click)="choosePackage(3)" *ngIf="chosenPackage!==3">Избери пакет</button>
                           <button type="button" class="btn submit" (click)="continue()" *ngIf="chosenPackage===3">Продължи</button>
                         </div>
-                      </div>
+                      </div> -->
                       <!-- END Col three -->
                     </div>
                   </div>

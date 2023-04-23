@@ -31,6 +31,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ClaimApprovedComponent } from './admin-profile/claim-approved/claim-approved.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,

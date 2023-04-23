@@ -19,6 +19,7 @@ export class StartInsuranceComponent implements OnInit {
   minDate:Date=new Date();
   maxDate:Date = new Date(new Date().getFullYear()+0,11,31)
   form:any;
+  additionalPack:any
   faToothIcon = faTooth;
   faHospitalIcon = faHospital;
   faBandageIcon = faBandage;
@@ -40,6 +41,10 @@ export class StartInsuranceComponent implements OnInit {
   setOneYear(date:any){
     date.setFullYear(date.getFullYear() + 1);
     return date;
+  }
+
+  addPack(value:string){
+    this.additionalPack=value;
   }
 
 

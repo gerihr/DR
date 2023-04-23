@@ -29,32 +29,14 @@
               </mat-form-field>
               <mat-form-field class="example-full-width field" >
                 <mat-label>Име</mat-label>
-                <input matInput>
+                <input matInput formControlName="name">
               </mat-form-field>
-              <mat-form-field class="example-full-width field" >
+              <!-- <mat-form-field class="example-full-width field" >
                 <mat-label>Телефонен номер</mat-label>
                 <input matInput>
-              </mat-form-field>
+              </mat-form-field> -->
               </div>
             </div>
-            <!-- <div class="field-wrapper">
-              <div
-              class="fw-bold form-header"
-              >
-                  <label >Изберете застрахованото <br>  лице</label>
-                </div>
-  
-                <div
-                class="form-field "
-                >
-                <mat-form-field>
-                  <mat-select>
-                    <mat-option  value="volvo">Гери Христозова</mat-option>
-                    <mat-option  value="saab">Мария Иванова</mat-option>
-                  </mat-select>
-                </mat-form-field>
-                </div>
-              </div> -->
               <div class="field-wrapper">
                 <div
                 class="fw-bold form-header"
@@ -66,7 +48,7 @@
                 class="form-field "
                 >
                 <mat-form-field>
-                  <mat-select >
+                  <mat-select formControlName="category">
                     <mat-option  value="volvo">Извънболнична помощ</mat-option>
                     <mat-option  value="saab">Болнична помощ</mat-option>
                     <mat-option  value="mercedes">Дентална помощ</mat-option>
@@ -86,7 +68,7 @@
                 class="form-field "
                 >
                 <mat-form-field>
-                  <mat-select >
+                  <mat-select formControlName="type">
                     <mat-option  value="volvo">Профилактика</mat-option>
                     <mat-option  value="saab">Терапия</mat-option>
                     <mat-option  value="mercedes">Хирургия</mat-option>
@@ -119,7 +101,7 @@
                 >
                 <mat-form-field class="example-full-width field" >
                   <mat-label>Сума</mat-label>
-                  <input matInput>
+                  <input matInput formControlName="sum">
                 </mat-form-field>
                 </div>
               </div>

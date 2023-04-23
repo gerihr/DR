@@ -6,7 +6,10 @@
         Статус
     </div>
     <div class="bubble-wrapper ">
-      <span class="bubble-text">Приключена</span>
+      <span class="bubble-text"  *ngIf="opened==false && claim.description===''">Платена</span>
+      <span class="bubble-text" *ngIf="opened==false && claim.description!==''">Отказана</span>
+      <span class="bubble-text" *ngIf="opened==true">Отворена</span>
+
     </div>
     </div>
   
@@ -25,7 +28,7 @@
          Застраховано лице
         </div>
         <div class="column">
-          Мария Иванова
+          {{claim.name}}
         </div>
       </div>
   
@@ -35,7 +38,7 @@
           Вид на претенцията
         </div>
         <div class="column">
-          Извънболнична помощ
+          {{claim.category}}
         </div>
       </div>
 
@@ -44,7 +47,7 @@
           Детайли на претенцията
         </div>
         <div class="column">
-          Медицинско изследване
+          {{claim.type}}
         </div>
       </div>
   
@@ -54,27 +57,27 @@
           Дата на претенцията
         </div>
         <div class="column">
-            11.03.2023
+          {{claim.claimDate | date: 'dd.MM.yyyy'}}
         </div>
       </div>
   
   
-      <div class="content">
+      <div class="content" *ngIf="opened==false">
         <div class="column">
           Дата на плащане
         </div>
         <div class="column">
-            1.04.2023
+          {{claim.paidDate | date: 'dd.MM.yyyy'}}
         </div>
       </div>
   
   
-      <div class="content">
+      <div class="content" *ngIf="opened==false && claim.description===''">
         <div class="column">
           Платена сума
         </div>
         <div class="column">
-          200лв
+          {{claim.paidSum}}
         </div>
       </div>
   

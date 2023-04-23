@@ -76,6 +76,12 @@
         gap: 20px
       }
 
+      .claim-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       p{
         font-weight: bold;
       }

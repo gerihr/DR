@@ -23,13 +23,13 @@
 
                             </div>
                             
-                            <div>
-                                <div class="info-data">13.03.2023</div>
-                                <div class="info-data"> Гери Христозова</div>
-                                <div class="info-data"> 0049137550</div>
-                                <div class="info-data"> Дентална помощ</div>
-                                <div class="info-data"> Профилактика</div>
-                                <div class="info-data"> 200лв </div>
+                            <div *ngIf="claimData">
+                                <div class="info-data">{{claimData.claimDate | date: 'dd.MM.yyyy'}}</div>
+                                <div class="info-data"> {{claimData.name}}</div>
+                                <div class="info-data"> {{claimData.egn}}</div>
+                                <div class="info-data"> {{claimData.category}}</div>
+                                <div class="info-data"> {{claimData.type}}</div>
+                                <div class="info-data"> {{claimData.sum}} </div>
                                 <div class="info-data"> 210лв </div>
                             </div>
                         </div>

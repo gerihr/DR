@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-claims-list-item',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClaimsListItemComponent implements OnInit {
 
+  @Input("claim") claim: any;
+  @Input("opened") opened: any;
   constructor() { }
 
   ngOnInit(): void {

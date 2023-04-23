@@ -2,39 +2,31 @@
     <div class="container">
         <h2 class="login-title">Добре дошли</h2>
     
-        <form class="login-form">
+        <form class="login-form" [formGroup]="form">    
           <div>
-            <label for="name">Име </label>
-            <input
-                   id="name"
-                   type="text"
-                   placeholder="Eren Buruk"
-                   name="name"
-                   required
-                   />
+            <mat-form-field class="example-full-width">
+              <mat-label>Код</mat-label>
+              <input matInput
+              formControlName="code"
+              required
+              placeholder="Моля, въведете вашия код">
+              </mat-form-field>
           </div>
     
           <div>
-            <label for="email">Имейл </label>
-            <input
-                   id="email"
-                   type="email"
-                   placeholder="me@example.com"
-                   name="email"
-                   required
-                   />
-          </div>
-    
-          <div>
-            <label for="password">Парола </label>
-            <input
-                   id="password"
-                   type="password"
-                   placeholder="password"
-                   name="password"
-                   required
-                   />
-          </div>
+                <mat-form-field class="example-full-width">
+                 <mat-label>ЕГН</mat-label>
+                 <input matInput [type]="show ? 'text' : 'password'"
+                 formControlName="egn"
+                 required
+                 placeholder="Моля, въведете вашето ЕГН">
+                 <i class="fa fa-eye" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==false"></i>
+                 <i class="fa fa-eye-slash" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==true"></i>
+                 <mat-error *ngIf="this.form.controls.egn.errors?.personalId">
+                  Невалидно ЕГН
+                </mat-error>
+                </mat-form-field>
+            </div>
     
           <button class="btn continue" type="submit" value="Log in" (click)="toMyProfile()">
             Продължи

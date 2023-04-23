@@ -27,9 +27,9 @@ const routes: Routes = [
   {path: 'error', component: ErrorPageComponent},
   {path: 'new-claim', component: NewClaimComponent},
   {path: 'my-profile', component: MyProfileComponent},
-  {path: 'my-claims', component: MyClaimDetailsComponent},
+  {path: 'my-claims/:id', component: MyClaimDetailsComponent},
   {path: 'admin-claims', component: AdminPageClaimsComponent},
-  {path: 'claim-details', component: AdminClaimDetailsComponent},
+  {path: 'claim-details/:id', component: AdminClaimDetailsComponent},
   {path: 'login', component: LogInComponent},
 
 

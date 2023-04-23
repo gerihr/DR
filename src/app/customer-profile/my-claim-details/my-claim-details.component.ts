@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ClaimService } from 'src/app/services/claim.service';
 
 @Component({
   selector: 'app-my-claim-details',
@@ -8,11 +9,23 @@ import { Router } from '@angular/router';
 })
 export class MyClaimDetailsComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute, private claimsService:ClaimService) { }
 
   currentIndex :number = 2;
+  encodedEgn: any;
+  claimsDataOpened:any;
+  claimdDataClosed:any;
 
   ngOnInit(): void {
+   this.route.paramMap.subscribe((params) => {
+      this.encodedEgn = params.get('id');
+    });
+    this.claimsService.getClaimByEgn(atob(this.encodedEgn)).subscribe((res: any) =>{
+      this.claimsDataOpened = res.filter((c:any) => c.paidDate === null);
+      this.claimdDataClosed = res.filter((c:any) => c.paidDate !== null);
+      console.log(this.claimdDataClosed);
+      console.log(this.claimsDataOpened);
+    })
   }
 
   newClaim(){
