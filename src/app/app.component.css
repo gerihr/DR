@@ -6,6 +6,7 @@
     height: 80px;
     top: 40%;
     left: 45%;
+    z-index: 100;
   }
   .lds-spinner div {
     transform-origin: 40px 40px;
@@ -79,3 +80,14 @@
     }
   }
   
+  .overlay{
+    display: block;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0.5;
+    pointer-events: none; 
+  }
+
+  .normal{
+    background: none;
+  }

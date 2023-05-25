@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { faTooth } from '@fortawesome/free-solid-svg-icons';
 import { faHospital } from '@fortawesome/free-solid-svg-icons';
 import { faBandage } from '@fortawesome/free-solid-svg-icons';
+import { FormServiceInsurance } from 'src/app/services/formServiceInsurance.service';
 
 
 
@@ -14,7 +15,7 @@ import { faBandage } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./start-insurance.component.css'],
 })
 export class StartInsuranceComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private formService: FormServiceInsurance) {}
 
   minDate:Date=new Date();
   maxDate:Date = new Date(new Date().getFullYear()+0,11,31)
@@ -45,10 +46,13 @@ export class StartInsuranceComponent implements OnInit {
 
   addPack(value:string){
     this.additionalPack=value;
+  
   }
 
 
   continue() {
+    this.formService.setPolicyForm(this.form);
+    this.formService.setAdditionalPack(this.additionalPack);
     this.router.navigate(['/packageSelection']);
   }
 }

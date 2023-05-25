@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { Cities } from 'src/app/services/bulgaria-towns';
 import { CustoValidator } from 'src/app/services/customValidator';
+import { FormServiceInsurance } from 'src/app/services/formServiceInsurance.service';
 import { sharedService } from 'src/app/services/sharedService.service';
 
 @Component({
@@ -13,6 +14,7 @@ import { sharedService } from 'src/app/services/sharedService.service';
 export class GuardianDataComponent implements OnInit {
   constructor(private router: Router, private formBuilder: FormBuilder, private sharedService: sharedService, 
     public cities: Cities,
+    private formService: FormServiceInsurance,
     private customValidator: CustoValidator) {
   }
 
@@ -21,7 +23,7 @@ export class GuardianDataComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       egn: new FormControl ("", {validators:[Validators.required, CustoValidator.personalId()]}),
-      name: new FormControl ("", Validators.required),
+      firstName: new FormControl ("", Validators.required),
       middleName: new FormControl ("", Validators.required),
       lastName: new FormControl ("",Validators.required),
       city: new FormControl ("", Validators.required),
@@ -32,8 +34,10 @@ export class GuardianDataComponent implements OnInit {
   }
 
   continue() {
-    console.log(this.form.value)
+    if(this.form.status=='VALID'){
+    this.formService.setInsurerForm(this.form);
     this.router.navigate(['/start-insurance']);
+    }
   }
 
 }

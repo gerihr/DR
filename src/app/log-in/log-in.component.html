@@ -1,8 +1,19 @@
 <section class="section">
     <div class="container">
         <h2 class="login-title">Добре дошли</h2>
+        <div class="login-form" *ngIf="isFormShowed!==true" >
+          <mat-form-field>
+            <mat-label>Искам да вляза като:</mat-label>
+            <mat-select >
+              <mat-option *ngFor="let type of typesArray" [value]="type" (click)="setType(type)">{{type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button class="btn continue" type="submit" value="Log in" (click)="isFormShowed=true">
+            Продължи
+          </button>
+        </div>
     
-        <form class="login-form" [formGroup]="form">    
+        <form class="login-form" [formGroup]="form"  *ngIf="isFormShowed===true && type==='потребител'">    
           <div>
             <mat-form-field class="example-full-width">
               <mat-label>Код</mat-label>
@@ -24,6 +35,39 @@
                  <i class="fa fa-eye-slash" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==true"></i>
                  <mat-error *ngIf="this.form.controls.egn.errors?.personalId">
                   Невалидно ЕГН
+                </mat-error>
+                </mat-form-field>
+            </div>
+    
+          <button class="btn continue" type="submit" value="Log in" (click)="toMyProfile()">
+            Продължи
+          </button>
+        </form>
+
+        <form class="login-form" [formGroup]="formAdmin"  *ngIf="isFormShowed===true && type==='админ'">    
+          <div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Потребителско име</mat-label>
+              <input matInput
+              formControlName="code"
+              required
+              placeholder="Моля, въведете вашето потребителско име">
+              </mat-form-field>
+          </div>
+    
+          <div>
+                <mat-form-field class="example-full-width">
+                 <mat-label>
+                  Парола
+                 </mat-label>
+                 <input matInput [type]="show ? 'text' : 'password'"
+                 formControlName="egn"
+                 required
+                 placeholder="Моля, въведете вашата парола">
+                 <i class="fa fa-eye" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==false"></i>
+                 <i class="fa fa-eye-slash" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==true"></i>
+                 <mat-error *ngIf="this.form.controls.egn.errors?.personalId">
+                  Невалидна парола
                 </mat-error>
                 </mat-form-field>
             </div>

@@ -32,6 +32,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ClaimApprovedComponent } from './admin-profile/claim-approved/claim-approved.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
+import { PreviewFileComponent } from './preview-file/preview-file.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AdminPageClaimsComponent,
     AdminClaimDetailsComponent,
     ClaimAnswerComponent,
-    ClaimApprovedComponent
+    ClaimApprovedComponent,
+    FileUploaderComponent,
+    PreviewFileComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MaterialModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    CurrencyMaskModule
+    CurrencyMaskModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      timeOut: 15000, // 15 seconds
+      progressBar: true,
+    }),
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { authService } from '../services/auth.service';
 
 @Component({
@@ -9,10 +10,15 @@ import { authService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router, public authService: authService) { }
+  isAdmin:any;
+  isLoggedIn:any;
+
+  constructor(public router: Router, public authService: authService) {
+   }
 
 
   ngOnInit(): void {
+    
         
   }
   getInsurance(){

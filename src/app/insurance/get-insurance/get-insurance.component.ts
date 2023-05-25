@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faStarOfLife } from '@fortawesome/free-solid-svg-icons';
+import { FormServiceInsurance } from 'src/app/services/formServiceInsurance.service';
 
 @Component({
   selector: 'app-get-insurance',
@@ -12,18 +13,10 @@ export class GetInsuranceComponent implements OnInit {
   icon = faStarOfLife;
   chosenPackage: any;
   packageList:any = [];
-  constructor(private router: Router) {}
+  constructor(private router: Router, private formService: FormServiceInsurance) {}
 
   ngOnInit(): void {
-
-    this.packageList = [
-      {packType:"Комфорт", price: 25, dental: 100, hospital: 2500 , patient: 450, goods: 100, index: 1 },
-      {packType:"Плюс", price: 50, dental: 250, hospital: 4500 , patient: 600, goods: 250, index: 2 },
-      {packType:"Макс", price: 100, dental: 350, hospital: 5500 , patient: 800, goods: 350, index: 3 }
-    ]
-
-    
-
+    this.packageList=this.formService.calculatePremiums();
   }
 
   choosePackage(packIndex: any){
@@ -32,7 +25,14 @@ export class GetInsuranceComponent implements OnInit {
 
   continue(pack:any){
     let selectedPackage=pack;
-    console.log(selectedPackage)
+    let policyForm = this.formService.getPolicyForm();
+    policyForm.controls["healthGoodsLimit"].setValue(pack.healthGoodsLimit);
+    policyForm.controls["hospitalLimit"].setValue(pack.hospitalLimit);
+    policyForm.controls["outOfHospitalLimit"].setValue(pack.outOfHospitalLimit);
+    policyForm.controls["dentalLimit"].setValue(pack.dentalLimit);
+    policyForm.controls["price"].setValue(pack.price);
+
+    this.formService.setPolicyForm(policyForm)
     this.router.navigate(['/payment']);
   }
 

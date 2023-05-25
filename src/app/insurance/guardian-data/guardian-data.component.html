@@ -20,13 +20,13 @@
                       </mat-error>
                     </mat-form-field><mat-form-field class="example-full-width field" >
                       <mat-label>Име</mat-label>
-                      <input matInput formControlName="name" pattern="[а-яА-Я]">
+                      <input matInput formControlName="firstName" pattern="[А-я]+">
                     </mat-form-field><mat-form-field class="example-full-width field" >
                       <mat-label>Презиме</mat-label>
-                      <input matInput formControlName="middleName" pattern="[а-яА-Я]">
+                      <input matInput formControlName="middleName" pattern="[А-я]+">
                     </mat-form-field><mat-form-field class="example-full-width field" >
                       <mat-label>Фамилия</mat-label>
-                      <input matInput formControlName="lastName" pattern="[а-яА-Я]">
+                      <input matInput formControlName="lastName" pattern="[А-я]+">
                     </mat-form-field>     <mat-form-field >
                       <mat-label>Град</mat-label>
                       <mat-select formControlName="city">
@@ -45,7 +45,7 @@
                   </mat-form-field>
     
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="button" class="btn submit" (click)="continue()">Продължи</button>
+                      <button type="button" class="btn submit" (click)="continue()" [disabled]="form.status!=='VALID'">Продължи</button>
                     </div>
   
                   </form>

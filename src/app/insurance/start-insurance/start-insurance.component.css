@@ -48,7 +48,7 @@
     justify-content: space-around;
 }
 
-.submit {
+/* .submit {
     cursor: pointer;
       border-radius: 5em;
       color: #fff;
@@ -67,7 +67,7 @@
     color: #EF814F;
     border: 1px solid #EF814F
 
-  }
+  } */
 
   .add{
     cursor: pointer;

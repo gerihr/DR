@@ -37,10 +37,10 @@
                   <div class="icon-box">
                     <div class="icon"><fa-icon [icon]="faBandageIcon"></fa-icon></div>
                     <h4 class="title">Увеличен пакет Извънболнична помощ</h4>
-                    <button type="button" class="btn add" (click)="addPack('outpatientCare')"  *ngIf="additionalPack!=='outpatientCare'">
+                    <button type="button" class="btn add" (click)="addPack('outOfHospitalLimit')"  *ngIf="additionalPack!=='outOfHospitalLimit'">
                       <mat-icon>add</mat-icon>
                     </button>
-                    <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='outpatientCare'">
+                    <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='outOfHospitalLimit'">
                     <mat-icon>remove_circle_outline</mat-icon>
                     </button>
                   </div>
@@ -51,10 +51,10 @@
                   <div class="icon-box">
                     <div class="icon"><fa-icon [icon]="faHospitalIcon"></fa-icon></div>
                     <h4 class="title">Увеличен пакет Болнична помощ</h4>
-                    <button type="button" class="btn add" (click)="addPack('hospitalCare')" *ngIf="additionalPack!=='hospitalCare'">
+                    <button type="button" class="btn add" (click)="addPack('hospitalLimit')" *ngIf="additionalPack!=='hospitalLimit'">
                       <mat-icon>add</mat-icon>
                     </button>
-                    <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='hospitalCare'">
+                    <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='hospitalLimit'">
                       <mat-icon>remove_circle_outline</mat-icon>
                       </button>
                   </div>
@@ -65,10 +65,10 @@
                   <div class="icon-box">
                     <div class="icon"><span class="material-icons">medication</span></div>
                     <h4 class="title">Увеличен пакет Здравни стоки и лекарства</h4>
-                    <button type="button" class="btn add" (click)="addPack('healthGoods')" *ngIf="additionalPack!=='healthGoods'">
+                    <button type="button" class="btn add" (click)="addPack('healthGoodsLimit')" *ngIf="additionalPack!=='healthGoodsLimit'">
                        <mat-icon>add</mat-icon>
                     </button>
-                    <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='healthGoods'">
+                    <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='healthGoodsLimit'">
                       <mat-icon>remove_circle_outline</mat-icon>
                       </button>
                   </div>
@@ -79,10 +79,10 @@
                     <div class="icon-box">
                       <div class="icon"><fa-icon [icon]="faToothIcon"></fa-icon></div>
                       <h4 class="title">Увеличен пакет Дентална помощ</h4>
-                      <button type="button" class="btn add" (click)="addPack('dental')" *ngIf="additionalPack!=='dental'">
+                      <button type="button" class="btn add" (click)="addPack('dentalLimit')" *ngIf="additionalPack!=='dentalLimit'">
                         <mat-icon>add</mat-icon>
                       </button>
-                      <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='dental'">
+                      <button type="button" class="btn add" (click)="addPack('')" *ngIf="additionalPack=='dentalLimit'">
                         <mat-icon>remove_circle_outline</mat-icon>
                         </button>
                     </div>
@@ -92,7 +92,7 @@
             
 
             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-              <button type="button" class="btn submit" (click)="continue()">
+              <button type="button" class="btn submit" (click)="continue()" [disabled]="form.status!=='VALID'">
                 Продължи
               </button>
             </div>

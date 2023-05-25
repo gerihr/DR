@@ -1,14 +1,14 @@
 <div mat-dialog-content>
     <p class="sum">
-        Максималната остатъчна сума е 210лв
+        Максималната остатъчна сума е {{maxLimitSum}}лв
     </p>
     <form [formGroup]="form">
     <mat-form-field class="example-full-width field" >
         <mat-label>Въведете сума на претенцията</mat-label>
-        <input matInput formControlName="paidSum"> <span style="margin-left:10px;"> лева</span>
+        <input matInput formControlName="paidSum" (change)="changePaidSum()"> <span style="margin-left:10px;"> лева</span>
     </mat-form-field>
 </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="approveClaim()">Изпрати</button>
+    <button mat-button (click)="approveClaim()" [disabled]="form.controls.paidSum.errors">Изпрати</button>
 </div>

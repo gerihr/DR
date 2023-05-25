@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { sharedService } from './services/sharedService.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'digital-health-insurance';
-  isLoading = false;
+
+  constructor(
+    public sharedService: sharedService
+  ){}
+
+  ngOnInit(){
+   
+  }
+
+  ngAfterViewInit() {
+    this.sharedService.isLoading(false)
+  }
+
 }

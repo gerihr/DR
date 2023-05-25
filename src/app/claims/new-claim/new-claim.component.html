@@ -20,12 +20,18 @@
               <div
                 class="form-field "
               >
-              <mat-form-field class="example-full-width field" >
+              <!-- <mat-form-field class="example-full-width field" >
                 <mat-label >ЕГН</mat-label>
                 <input matInput formControlName="egn" >
                 <mat-error *ngIf="this.form.controls.egn.errors?.personalId">
                   Невалидно ЕГН
                 </mat-error>
+              </mat-form-field> -->
+              <mat-form-field>
+                <mat-label>ЕГН</mat-label>
+                <mat-select formControlName="egn" >
+                  <mat-option *ngFor="let user of userInformation" [value]="user.egn" (click)="setUser(user)">{{user.egn}}</mat-option>
+                </mat-select>
               </mat-form-field>
               <mat-form-field class="example-full-width field" >
                 <mat-label>Име</mat-label>
@@ -48,16 +54,14 @@
                 class="form-field "
                 >
                 <mat-form-field>
-                  <mat-select formControlName="category">
-                    <mat-option  value="volvo">Извънболнична помощ</mat-option>
-                    <mat-option  value="saab">Болнична помощ</mat-option>
-                    <mat-option  value="mercedes">Дентална помощ</mat-option>
-                    <mat-option  value="audi">Здравни услуги</mat-option>
+                  <mat-label>Категория на претенцията</mat-label>
+                  <mat-select formControlName="category" >
+                    <mat-option *ngFor="let cat of categories" [value]="cat.category" (click)="getTypes(cat.id)">{{cat.category}}</mat-option>
                   </mat-select>
                 </mat-form-field>
                 </div>
               </div>
-              <div class="field-wrapper">
+              <div class="field-wrapper" *ngIf="types">
                 <div
                 class="fw-bold form-header"
                 >
@@ -68,25 +72,11 @@
                 class="form-field "
                 >
                 <mat-form-field>
+                  <mat-label>Тип на претенцията</mat-label>
                   <mat-select formControlName="type">
-                    <mat-option  value="volvo">Профилактика</mat-option>
-                    <mat-option  value="saab">Терапия</mat-option>
-                    <mat-option  value="mercedes">Хирургия</mat-option>
+                    <mat-option *ngFor="let type of types" [value]="type.type">{{type.type}}</mat-option>
                   </mat-select>
                 </mat-form-field>
-                </div>
-              </div>
-              <div class="field-wrapper">
-                <div
-                class="fw-bold form-header"
-                >
-                  <label >Прикачете вашия файл</label>
-                </div>
-  
-                <div
-                class="form-field "
-                >
-       
                 </div>
               </div>
               <div class="field-wrapper">
@@ -120,6 +110,19 @@
                   <input matInput formControlName="iban">
                 </mat-form-field>
                 </div>
+              </div>
+
+
+              <div class="field-wrapper">
+                <div
+                  class="fw-bold form-header"
+                >
+                <label >Прикачете вашия файл</label>
+                </div>
+              </div>
+              
+              <div style="margin-top: 10px; padding-left: 50px; padding-right: 50px;">
+                <app-file-uploader (updatedFiles)="updatedFiles($event)"></app-file-uploader>
               </div>
 
               <div class="button-wrapper">

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-card-item',
@@ -8,10 +9,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class ProfileCardItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   
   personalData : any;
   isEditing = false;
+  @Input() insuredData:any; 
 
   ngOnInit(): void {
     const form = new FormGroup({
@@ -23,6 +25,10 @@ export class ProfileCardItemComponent implements OnInit {
 
     });
     
+  }
+
+  toMyClaims(egn:any){
+    this.router.navigate(['/my-claims',  btoa(egn) ]);
   }
 
   onEditing(){

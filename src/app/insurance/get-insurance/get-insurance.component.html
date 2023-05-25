@@ -14,10 +14,10 @@
                           </div>
                           <div class="option">
                             <ul>
-                            <li> <i class="fa fa-check" aria-hidden="true"></i> Извънболнична помощ - <span>{{pack.patient}}</span>лв.</li>
-                            <li> <i class="fa fa-check" aria-hidden="true"></i> Болнична помощ -  <span>{{pack.hospital}}</span>лв. </li>
-                            <li> <i class="fa fa-check" aria-hidden="true"></i> Дентална помощ  -  <span>{{pack.dental}}</span>лв.</li>
-                            <li> <i class="fa fa-check" aria-hidden="true"></i> ЗДРАВНИ СТОКИ -  <span>{{pack.goods}}</span>лв. </li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> Извънболнична помощ - <span>{{pack.outOfHospitalLimit}}</span>лв.</li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> Болнична помощ -  <span>{{pack.hospitalLimit}}</span>лв. </li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> Дентална помощ  -  <span>{{pack.dentalLimit}}</span>лв.</li>
+                            <li> <i class="fa fa-check" aria-hidden="true"></i> ЗДРАВНИ СТОКИ -  <span>{{pack.healthGoodsLimit}}</span>лв. </li>
                             </ul>
                           </div>
                           <button type="button" class="btn submit" (click)="choosePackage(pack.index)" *ngIf="chosenPackage!==pack.index">Избери пакет</button>

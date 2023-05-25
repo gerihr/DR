@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: "Helvetica Neue", sans-serif;
@@ -11,3 +12,40 @@ body { margin: 0; font-family: "Helvetica Neue", sans-serif;
 .mat-form-field-infix{
     display: flex !important;
 }
+
+.toast-container{
+  top: 50% !important;
+  left: 50% !important;
+  margin: -25px 0 0 -150px !important;
+  font-size: 15px !important;
+}
+
+
+
+.submit {
+    cursor: pointer !important;
+      border-radius: 5em !important;
+      color: #fff !important;
+      background-color: #EF814F !important;
+      border: 0 !important;
+      padding-left: 40px !important;
+      padding-right: 40px !important;
+      padding-bottom: 10px !important;
+      padding-top: 10px !important;
+      font-family: "Helvetica Neue", sans-serif !important;
+      font-size: 14px !important;
+      box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04) !important;
+      z-index: 10;
+    
+  }
+
+  .submit:disabled{
+    background-color: #EF814F !important;
+    opacity: 0.5 !important;
+  }
+
+  .submit:hover{
+    background-color: white !important;
+    color: #EF814F !important;
+    border: 1px solid #EF814F !important
+  }

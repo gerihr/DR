@@ -1,0 +1,4 @@
+<div *ngFor="let file of data, let i=index" class="info-data" style="display: flex;">
+    <mat-icon mat-list-icon (click)="previewFile(file)" class="icon" style="margin-right: 10px">insert_drive_file</mat-icon>
+    <div mat-line>{{file.type}} - {{file.name}} <span></span></div>
+  </div>

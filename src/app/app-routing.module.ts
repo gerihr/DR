@@ -15,21 +15,23 @@ import { MyClaimDetailsComponent } from './customer-profile/my-claim-details/my-
 import { LogInComponent } from './log-in/log-in.component';
 import { AdminPageClaimsComponent } from './admin-profile/admin-page-claims/admin-page-claims.component';
 import { AdminClaimDetailsComponent } from './admin-profile/admin-claim-details/admin-claim-details.component';
+import { AuthGuard } from './auth.guard';
+import { InsFormGurard } from './insForm.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'insurerData', component: InsurerDataComponent},
-  {path: 'guardianData', component: GuardianDataComponent},
-  {path: 'start-insurance', component: StartInsuranceComponent},
-  {path: 'packageSelection', component: GetInsuranceComponent},
-  {path: 'payment', component: PaymentComponent},
-  {path: 'successful', component: SuccessfulPaymentComponent},
-  {path: 'error', component: ErrorPageComponent},
-  {path: 'new-claim', component: NewClaimComponent},
-  {path: 'my-profile', component: MyProfileComponent},
-  {path: 'my-claims/:id', component: MyClaimDetailsComponent},
-  {path: 'admin-claims', component: AdminPageClaimsComponent},
-  {path: 'claim-details/:id', component: AdminClaimDetailsComponent},
+  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'insurerData', component: InsurerDataComponent, canActivate: [AuthGuard]},
+  {path: 'guardianData', component: GuardianDataComponent, canActivate: [AuthGuard, InsFormGurard]},
+  {path: 'start-insurance', component: StartInsuranceComponent, canActivate: [AuthGuard, InsFormGurard]},
+  {path: 'packageSelection', component: GetInsuranceComponent, canActivate: [AuthGuard, InsFormGurard]},
+  {path: 'payment', component: PaymentComponent, canActivate: [AuthGuard,InsFormGurard]},
+  {path: 'successful/:id', component: SuccessfulPaymentComponent, canActivate: [AuthGuard, InsFormGurard]},
+  {path: 'error', component: ErrorPageComponent, canActivate: [AuthGuard]},
+  {path: 'my-new-claim', component: NewClaimComponent, canActivate: [AuthGuard]},
+  {path: 'my-profile', component: MyProfileComponent, canActivate: [AuthGuard]},
+  {path: 'my-claims/:id', component: MyClaimDetailsComponent, canActivate: [AuthGuard]},
+  {path: 'admin-claims', component: AdminPageClaimsComponent, canActivate: [AuthGuard]},
+  {path: 'admin-claim-details/:id', component: AdminClaimDetailsComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LogInComponent},
 
 

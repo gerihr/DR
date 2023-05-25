@@ -14,8 +14,8 @@
       </div>
               <div *ngIf="currentIndex == 2" style="text-align: center;">
                 <b *ngIf="claimdDataClosed!==undefined && claimdDataClosed.length==0">Няма приключени претенции</b>
-                <div *ngIf="claimdDataClosed!==undefined && claimdDataClosed.length>0">
-                  <div *ngFor=" let claim of claimdDataClosed" class="list-wrapper">
+                <div *ngIf="claimdDataClosed!==undefined && claimdDataClosed.length>0"  class="list-wrapper">
+                  <div *ngFor=" let claim of claimdDataClosed">
                     <app-claims-list-item [claim]="claim" [opened]="false">
                     </app-claims-list-item>
                   </div>

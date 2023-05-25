@@ -1,4 +1,4 @@
-<section class="vh-100" class="wrapper">
+<section class="vh-100" class="wrapper" *ngIf="claimData">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
@@ -6,7 +6,7 @@
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 form-header">
-                    <p class="header-text"> Претенция Nº021555548/584/125</p>
+                    <p class="header-text"> Претенция Nº{{claimData.claimNumber}}</p>
                 </div>
                   <div class="info-box">
                     <div >
@@ -19,8 +19,7 @@
                             <p>Детайли на претенцията </p>
                             <p>Заявена сума</p>
                             <p>Остаъчна сума</p>
-                            <p>Прикачени документи </p>
-
+                            <p  *ngIf="claimData.files">Прикачени файлове ({{ file_store.length }})</p>
                             </div>
                             
                             <div *ngIf="claimData">
@@ -30,7 +29,13 @@
                                 <div class="info-data"> {{claimData.category}}</div>
                                 <div class="info-data"> {{claimData.type}}</div>
                                 <div class="info-data"> {{claimData.sum}} </div>
-                                <div class="info-data"> 210лв </div>
+                                <div class="info-data"> {{maxLimit}} </div>
+                                <div *ngIf="claimData.files">
+                                  <div *ngFor="let file of file_store, let i=index" class="info-data" style="display: flex;">
+                                    <mat-icon mat-list-icon (click)="previewFile(file)" class="icon" style="margin-right: 10px">insert_drive_file</mat-icon>
+                                    <div mat-line>{{file.type}} - {{file.name}} <span></span></div>
+                                  </div>
+                                </div>
                             </div>
                         </div>
 
@@ -42,6 +47,7 @@
                     <button mat-raised-button style="background-color: green; color: white;" (click)="sendAnswerApproved()">Потвърди претенцията</button>
 
                 </div>
+
               </div>
             </div>
           </div>

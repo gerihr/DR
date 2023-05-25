@@ -1,0 +1,43 @@
+		<div class="upload-wrapper">
+			<mat-form-field style="width: 50%;">
+				<mat-icon style="font-size:20px">attach_file</mat-icon>
+					<input type="text" readonly matInput [formControl]="display" />
+					<input
+				type="file"
+				multiple
+				hidden
+				#f_input
+				(change)="handleFileInputChange(f_input.files)"
+			  />
+				</mat-form-field>
+				
+				<mat-form-field appearance="fill">
+					<mat-label>Вид на файла</mat-label>
+					<mat-select [formControl]="fileType">
+					  <mat-option *ngFor="let type of fileTypes" [value]="type" >
+						{{type}}
+					  </mat-option>
+					</mat-select>
+				  </mat-form-field>
+		
+		</div>
+
+        <button mat-stroked-button color="primary" (click)="f_input.click()">
+            Добави
+        </button>
+	
+		<button mat-stroked-button color="primary" [disabled]="display.invalid" (click)="handleSubmit()">
+            Запази
+        </button>
+	
+
+<mat-card *ngIf="file_store.length" style="margin-top: 16px;">
+	<mat-list>
+		<div mat-subheader>Прикачени файлове ({{ file_store.length }})</div>
+		<mat-list-item *ngFor="let file of file_store, let i=index">
+			<mat-icon mat-list-icon (click)="previewFile(i)" class="icon">insert_drive_file</mat-icon>
+			<div mat-line>{{file.type}} <span> - {{ file.file.name }}</span></div>
+			<mat-icon (click)="removeFile(i)" class="icon">cancel</mat-icon>
+		</mat-list-item>
+	</mat-list>
+</mat-card>

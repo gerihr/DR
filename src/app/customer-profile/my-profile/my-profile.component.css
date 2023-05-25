@@ -29,7 +29,7 @@
     font-family: "Helvetica Neue", sans-serif;
   }
     
-    .submit {
+    /* .submit {
         cursor: pointer;
           border-radius: 5em;
           color: #fff;
@@ -49,7 +49,7 @@
         color: #EF814F;
         border: 1px solid #EF814F
     
-      }
+      } */
       .form-header{
         color: #4e4039;
         display: flex;

@@ -1,5 +1,7 @@
 <app-header></app-header>
 
-<div class="lds-spinner" *ngIf="isLoading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    <router-outlet *ngIf="isLoading===false"></router-outlet>
+<div class="lds-spinner" *ngIf="sharedService.isLoading$ | async"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<div [ngClass]="(sharedService.isLoading$ | async) ? 'overlay' : 'normal'">
+    <router-outlet></router-outlet>
+</div>    
 

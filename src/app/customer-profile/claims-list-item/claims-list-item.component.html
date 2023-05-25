@@ -19,7 +19,7 @@
           Претенция номер
         </div>
         <div class="column">
-            02254588355223
+          {{claim.claimNumber}}/{{claim.id}}
         </div>
       </div>
 
@@ -80,13 +80,27 @@
           {{claim.paidSum}}
         </div>
       </div>
+
+      <div class="content" *ngIf="opened==false && claim.description!==''">
+        <div class="column">
+         Отказана поради
+        </div>
+        <div class="column">
+          <mat-icon type="button" (click)="showStatus=true" *ngIf="!showStatus">keyboard_arrow_down</mat-icon>
+          <mat-icon type="button" (click)="showStatus=false" *ngIf="showStatus">keyboard_arrow_up</mat-icon>
+        </div>
+      </div>
+      <div class="column" style="padding-top:0px" *ngIf="opened==false && claim.description!=='' && showStatus">
+        {{claim.description}}
+      </div>
   
   
   
   
     <div class="wrapper content">
       <div class="wrapper-text column">
-        Прикачени документи
+        <div type="button" (click)="viewAttachedDocs()" *ngIf="claim.files" >Вижте прикачени документи</div>
+        <div *ngIf="!claim.files">Няма прикачени документи</div>
       </div>
     </div>
   

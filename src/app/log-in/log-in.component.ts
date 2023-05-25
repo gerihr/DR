@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { authService } from '../services/auth.service';
 import { CustoValidator } from '../services/customValidator';
+import { EMPTY, catchError, of } from 'rxjs';
+import { sharedService } from '../services/sharedService.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-log-in',
@@ -12,16 +15,27 @@ import { CustoValidator } from '../services/customValidator';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private router: Router, private authService: authService) { }
+  constructor(private router: Router, private authService: authService,private tostrService: ToastrService, private sharedService: sharedService) { }
 
   show:boolean=false;
   form:any;
+  formAdmin:any
+  typesArray = ["админ", "потребител"];
+  isFormShowed:any;
+  type:any;
 
   ngOnInit(): void {
+    this.isFormShowed = false;
+    this.type=this.typesArray[1];
     this.form = new FormGroup({
       egn: new FormControl ("", {validators:[Validators.required, CustoValidator.personalId()]}),
       code: new FormControl ("", Validators.required)
   });
+
+  this.formAdmin = new FormGroup({
+    egn: new FormControl ("", {validators:[Validators.required]}),
+    code: new FormControl ("", Validators.required)
+});
   }
 
   showEGN(){
@@ -29,11 +43,42 @@ export class LogInComponent implements OnInit {
     console.log(this.form)
   }
 
-  toMyProfile(){
+  setType(type:any){
+    this.type=type
+  }
 
-    this.authService.login(this.form.value).subscribe(res=>{
-      if(res){
+  showForm(){}
+
+  toMyProfile(){
+    let usedForm = this.type == 'потребител' ? this.form : this.formAdmin
+    this.authService.login(usedForm.value).pipe(
+      catchError(err => {
+        if(err.status !== 200){
+          this.sharedService.isLoading(false);
+          this.tostrService.error(err.error);
+          return EMPTY
+        }
+        else{
+          return of(err);
+        }
+      })
+    )
+    .subscribe((res:any)=>{
+      if(res.type === 'insurer'){
+        sessionStorage.setItem('UserType', "insurer"); 
+        sessionStorage.setItem('InsurerData', res.idNumber)
+         this.authService.isLogged(true);
+         this.authService.adminCheck(false)
         this.router.navigate(['/my-profile']);
+      }
+      else if(res.type == 'admin'){
+        sessionStorage.setItem('UserType', "admin"); 
+         this.authService.isLogged(true);
+         this.authService.adminCheck(true)
+        this.router.navigate(['/admin-claims']);
+      }
+      else{
+        this.router.navigate(['/error'])
       }
     })
   }

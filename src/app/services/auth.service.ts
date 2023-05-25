@@ -1,25 +1,37 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { AbstractControl, ValidatorFn } from "@angular/forms";
+import { Router } from "@angular/router";
+import { BehaviorSubject, ReplaySubject, Subject } from "rxjs";
 
 @Injectable({
     providedIn: 'root',
   })
 export class authService {
-    isAuth:any 
+    private isLoggedIn: Subject<Object> = new ReplaySubject<Object>(1);
+    public readonly loggedIn$ = this.isLoggedIn.asObservable();
 
-    constructor(private http: HttpClient){}
+    private isAdmin: Subject<Object> = new ReplaySubject<Object>(1);
+    public readonly isAdmin$ = this.isAdmin.asObservable();
+
+    constructor(private http: HttpClient, private router: Router){}
 
     login(loginForm:any){
       return  this.http.post('/v1/login', loginForm )
-
     }
 
-    getAuth(){
-        return this.isAuth;
+    logout(){
+      this.isLogged(false);
+      this.adminCheck(false)
+      sessionStorage.removeItem('UserType'); 
+      this.router.navigate(['/']);
     }
 
-    setAuth(value:any){
-        this.isAuth=value;
+    isLogged(bool:boolean){
+      this.isLoggedIn.next(bool);
+    }
+
+    adminCheck(bool:boolean){
+      this.isAdmin.next(bool);
     }
 }

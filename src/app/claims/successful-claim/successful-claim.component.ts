@@ -15,10 +15,11 @@ export class SuccessfulClaimComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    
   }
 
   toMyClaims(){
-    this.router.navigate(['/my-claims']);
+    this.router.navigate(['/my-claims',  btoa(this.data.egn) ]);
     this.dialogRef.close()
   }
 
