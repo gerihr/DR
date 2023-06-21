@@ -12,14 +12,14 @@ import { sharedService } from '../services/sharedService.service';
 export class FileUploaderComponent implements OnInit{
 
   constructor(private dialog: MatDialog, private http: HttpClient, private sharedService: sharedService){}
-  @Output() updatedFiles  = new EventEmitter<{ files:any }>();
+  @Output() updatedFiles  = new EventEmitter<{ files  }>();
   display: FormControl = new FormControl("", Validators.required);
   fileType: FormControl = new FormControl("", Validators.required);
   file_store: any;
-  addedFile:any;
-  file_list:any = [];
-  file_test:any=[];
-  imageUrl:any;
+  addedFile ;
+  file_list  = [];
+  file_test =[];
+  imageUrl ;
   
   fileTypes = ['Aмбулаторен лист','Mедицинско направление','Платежен документ', 'Резултати от изследване', 'Епикриза', 'Процедурен картон', 'Ренегнография'];
 
@@ -52,7 +52,7 @@ export class FileUploaderComponent implements OnInit{
     // do submit ajax
   }
 
-  previewFile(i:any){
+  previewFile(i ){
     this.sharedService.previewFile(this.file_store[i].file)
   }
 
@@ -72,7 +72,7 @@ export class FileUploaderComponent implements OnInit{
 }
   
 
-  removeFile(removedFileIndex:any){
+  removeFile(removedFileIndex ){
     this.file_list.splice(removedFileIndex, 1);
     this.file_store.splice(removedFileIndex, 1);
     this.updateFiles();

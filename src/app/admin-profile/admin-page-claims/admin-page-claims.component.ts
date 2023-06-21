@@ -15,10 +15,10 @@ import { sharedService } from 'src/app/services/sharedService.service';
 export class AdminPageClaimsComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'egn', 'claimID'];
 
-  ELEMENT_DATA:any = [];
+  ELEMENT_DATA  = [];
 
  @ViewChild(MatPaginator) paginator!: MatPaginator;
- dataSource:any;
+ dataSource ;
 
 
   constructor(private claimsService:ClaimService, private router: Router, private sharedService: sharedService, private tostrService: ToastrService) { }
@@ -39,8 +39,8 @@ export class AdminPageClaimsComponent implements AfterViewInit {
         }
       })
     )
-    .subscribe((res:any)=> {
-      this.ELEMENT_DATA = res.filter((c:any)=> c.paidDate==null);
+    .subscribe((res )=> {
+      this.ELEMENT_DATA = res.filter((c )=> c.paidDate==null);
       this.dataSource = new MatTableDataSource<any>(this.ELEMENT_DATA);
       this.dataSource.paginator = this.paginator;
       this.sharedService.isLoading(false);   
@@ -48,7 +48,7 @@ export class AdminPageClaimsComponent implements AfterViewInit {
     })
   }
 
-  goToDetails(claim:any){
+  goToDetails(claim ){
     // this.claimsService.setCurrentClaimdId(claim.id);
     this.router.navigate(['/admin-claim-details', claim.id]);
   }

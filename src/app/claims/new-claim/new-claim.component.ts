@@ -17,11 +17,11 @@ import { Router } from '@angular/router';
 })
 export class NewClaimComponent implements OnInit, AfterViewInit {
   claimData: any;
-  form:any;
-  categories:any;
-  types:any;
+  form ;
+  categories ;
+  types ;
   selectedFiles : any = [];
-  userInformation:any = [];
+  userInformation  = [];
 
   constructor(public dialog: MatDialog, public claimsService:ClaimService,
     private enumsService: enumsService,
@@ -65,8 +65,8 @@ export class NewClaimComponent implements OnInit, AfterViewInit {
       this.sharedService.isLoading(false);
     })
 
-    this.sharedService.userClaimsInformation$.subscribe((info:any) =>{
-        let information = info.map((x:any) => x.insuredId);
+    this.sharedService.userClaimsInformation$.subscribe((info ) =>{
+        let information = info.map((x ) => x.insuredId);
         if(!information.length){
           this.userInformation.push(information);
         }
@@ -79,13 +79,13 @@ export class NewClaimComponent implements OnInit, AfterViewInit {
 
   public toFilesBase64(files: any): Observable<any> {
     const result = new AsyncSubject<any>();
-    let selectedFiles:any = [];
+    let selectedFiles  = [];
     if (files?.length) {
       Object.keys(files)?.forEach(async (file, i) => {
         const reader = new FileReader();
         reader.readAsDataURL(files[i].file);
         reader.onload = (e) => {
-          selectedFiles = selectedFiles?.filter((f:any) => f?.name != files[i]?.file.name)
+          selectedFiles = selectedFiles?.filter((f ) => f?.name != files[i]?.file.name)
           selectedFiles.push({ name: files[i]?.file.name, base64:reader?.result as string, type:files[i].type})
           result.next(selectedFiles);
           if (files?.length === (i + 1)) {
@@ -101,19 +101,19 @@ export class NewClaimComponent implements OnInit, AfterViewInit {
     }
   }
 
-  setUser(user:any){
+  setUser(user ){
     this.form.controls.name.setValue(user.firstName + " " + user.lastName)
   }
 
-  updatedFiles(event:any){
-    this.toFilesBase64(event.files).subscribe((res:any) => {
+  updatedFiles(event ){
+    this.toFilesBase64(event.files).subscribe((res ) => {
       this.form.controls.files.value = res;
     });
 
     // this.form.controls.files.value = event.files
   }
 
-  getTypes(index:any){
+  getTypes(index ){
     this.types = this.categories[index-1].typeList
   }
 

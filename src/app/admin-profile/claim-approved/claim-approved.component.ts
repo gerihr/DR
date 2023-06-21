@@ -14,7 +14,7 @@ import { sharedService } from 'src/app/services/sharedService.service';
 })
 export class ClaimApprovedComponent implements OnInit {
 
-  form:any;
+  form ;
   maxLimitSum:number = 0;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
@@ -59,7 +59,7 @@ export class ClaimApprovedComponent implements OnInit {
         }
       })
     )
-    .subscribe((res:any) =>{
+    .subscribe((res ) =>{
       this.sharedService.isLoading(false);
       this.tostrService.success(res.error.text)
       this.dialog.closeAll();

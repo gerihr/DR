@@ -28,12 +28,12 @@
                 <mat-form-field class="example-full-width">
                  <mat-label>ЕГН</mat-label>
                  <input matInput [type]="show ? 'text' : 'password'"
-                 formControlName="egn"
+                 formControlName="idNumber"
                  required
                  placeholder="Моля, въведете вашето ЕГН">
                  <i class="fa fa-eye" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==false"></i>
                  <i class="fa fa-eye-slash" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==true"></i>
-                 <mat-error *ngIf="this.form.controls.egn.errors?.personalId">
+                 <mat-error *ngIf="this.form.controls.idNumber.errors?.personalId">
                   Невалидно ЕГН
                 </mat-error>
                 </mat-form-field>
@@ -49,8 +49,9 @@
             <mat-form-field class="example-full-width">
               <mat-label>Потребителско име</mat-label>
               <input matInput
-              formControlName="code"
+              formControlName="idNumber"
               required
+              minlength="5" maxlength="15"
               placeholder="Моля, въведете вашето потребителско име">
               </mat-form-field>
           </div>
@@ -61,12 +62,13 @@
                   Парола
                  </mat-label>
                  <input matInput [type]="show ? 'text' : 'password'"
-                 formControlName="egn"
+                 formControlName="code"
                  required
+                 minlength="5" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$"
                  placeholder="Моля, въведете вашата парола">
                  <i class="fa fa-eye" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==false"></i>
                  <i class="fa fa-eye-slash" id="togglePassword" type="button" style="margin-left: -20px; cursor: pointer;" (click)="showEGN()" *ngIf="show!==true"></i>
-                 <mat-error *ngIf="this.form.controls.egn.errors?.personalId">
+                 <mat-error *ngIf="this.form.controls.idNumber.errors?.personalId">
                   Невалидна парола
                 </mat-error>
                 </mat-form-field>

@@ -35,6 +35,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { PreviewFileComponent } from './preview-file/preview-file.component';
+import { AdminsListComponent } from './admin-profile/admins-list/admins-list.component';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { PreviewFileComponent } from './preview-file/preview-file.component';
     ClaimAnswerComponent,
     ClaimApprovedComponent,
     FileUploaderComponent,
-    PreviewFileComponent
+    PreviewFileComponent,
+    AdminsListComponent
   ],
   imports: [
     BrowserModule,

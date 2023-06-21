@@ -21,7 +21,7 @@ export class sharedService {
   }
 
     //Проверка дали лицето е над 18 години
-     isAdult(egn:any) : any {
+     isAdult(egn ) : any {
       let date = this.getBirhtDay(egn)
         var diff_ms = Date.now() - date.getTime();
         var age_dt = new Date(diff_ms); 
@@ -31,7 +31,7 @@ export class sharedService {
 
 
       //Взимаме дата на раждане
-      getBirhtDay (egnNum :any) {
+      getBirhtDay (egnNum  ) {
         let monthBorn = this.getNums(egnNum, 2, 2);
         const dayBorn = this.getNums(egnNum, 4, 2);
         var year_flag = 1900;
@@ -49,7 +49,7 @@ export class sharedService {
         );
       };
       
-       getNums (str:any, start:any, simbolNum:any) {
+       getNums (str , start , simbolNum ) {
         return str.substr(start, simbolNum) * 1;
       };    
 
@@ -57,17 +57,17 @@ export class sharedService {
         this.loading.next(bool)
       }
 
-      setUserClaimsInformation(info:any){
+      setUserClaimsInformation(info ){
         this.userClaimsInfo$.next(info);
       }
 
-      previewFile(file:any){
+      previewFile(file ){
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = (e) => {
          let base64str=(reader?.result as string);
-         var win:any = window.open();
-        win.document.write('<iframe src="' + base64str  + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
+         var win  = window.open();
+        window.document.write('<iframe src="' + base64str  + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
         }
       }
     

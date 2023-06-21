@@ -12,7 +12,7 @@ export class GetInsuranceComponent implements OnInit {
 
   icon = faStarOfLife;
   chosenPackage: any;
-  packageList:any = [];
+  packageList  = [];
   constructor(private router: Router, private formService: FormServiceInsurance) {}
 
   ngOnInit(): void {
@@ -23,7 +23,7 @@ export class GetInsuranceComponent implements OnInit {
    this.chosenPackage = packIndex
   }
 
-  continue(pack:any){
+  continue(pack ){
     let selectedPackage=pack;
     let policyForm = this.formService.getPolicyForm();
     policyForm.controls["healthGoodsLimit"].setValue(pack.healthGoodsLimit);

@@ -18,8 +18,8 @@ export class MyClaimDetailsComponent implements AfterViewInit {
 
   currentIndex :number = 2;
   encodedEgn: any;
-  claimsDataOpened:any;
-  claimdDataClosed:any;
+  claimsDataOpened ;
+  claimdDataClosed ;
 
   ngAfterViewInit(): void {
    this.route.paramMap.subscribe((params) => {
@@ -40,8 +40,8 @@ export class MyClaimDetailsComponent implements AfterViewInit {
       })
     )
     .subscribe((res: any) =>{
-      this.claimsDataOpened = res.filter((c:any) => c.paidDate === null);
-      this.claimdDataClosed = res.filter((c:any) => c.paidDate !== null);
+      this.claimsDataOpened = res.filter((c ) => c.paidDate === null);
+      this.claimdDataClosed = res.filter((c ) => c.paidDate !== null);
       this.sharedService.isLoading(false);
     })
   }

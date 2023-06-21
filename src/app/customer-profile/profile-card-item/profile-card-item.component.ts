@@ -13,7 +13,7 @@ export class ProfileCardItemComponent implements OnInit {
   
   personalData : any;
   isEditing = false;
-  @Input() insuredData:any; 
+  @Input() insuredData ; 
 
   ngOnInit(): void {
     const form = new FormGroup({
@@ -27,7 +27,7 @@ export class ProfileCardItemComponent implements OnInit {
     
   }
 
-  toMyClaims(egn:any){
+  toMyClaims(egn ){
     this.router.navigate(['/my-claims',  btoa(egn) ]);
   }
 

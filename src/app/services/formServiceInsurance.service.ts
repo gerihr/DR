@@ -8,7 +8,7 @@ import { CustoValidator } from './customValidator';
   providedIn: 'root',
 })
 export class FormServiceInsurance {
-  claimForm:any;
+  claimForm ;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -34,7 +34,7 @@ export class FormServiceInsurance {
     email: new FormControl ("", {validators:[Validators.required, Validators.email]})
   });
 
-  additionalPack:any;
+  additionalPack ;
 
   policy= new FormGroup({
     startDate: new FormControl ("", Validators.required),
@@ -53,11 +53,11 @@ export class FormServiceInsurance {
       {packType:"Макс", price: 75, dentalLimit: 350, hospitalLimit: 5500 , outOfHospitalLimit: 800, healthGoodsLimit: 350, index: 3 }
     ];
 
-    let priceChange:any = {dentalLimit: 50, hospitalLimit: 500 , outOfHospitalLimit: 100, healthGoodsLimit: 75}
+    let priceChange  = {dentalLimit: 50, hospitalLimit: 500 , outOfHospitalLimit: 100, healthGoodsLimit: 75}
     let finalPremiums;
     if(this.additionalPack){
       let addedValue = priceChange[this.additionalPack]
-      finalPremiums = beginningPremiums.map((ev:any) => {
+      finalPremiums = beginningPremiums.map((ev ) => {
        return { ...ev, price: ev.price+(0.2* ev.price), [this.additionalPack]: ev[this.additionalPack]+addedValue}
       }
     );
@@ -86,7 +86,7 @@ export class FormServiceInsurance {
     return this.claimForm;
   }
 
-  setInsurerForm(form:any){
+  setInsurerForm(form ){
   this.claimForm.controls.insurer.patchValue(form.value)
   }
 
@@ -94,7 +94,7 @@ export class FormServiceInsurance {
     return  this.claimForm.controls.insurer.value
   }
 
-  setInsuredForm(form:any){
+  setInsuredForm(form ){
     this.claimForm.controls.insured.patchValue(form.value)
     }
   
@@ -102,7 +102,7 @@ export class FormServiceInsurance {
       return  this.claimForm.controls.insured.value
   }
 
-  setPolicyForm(form:any){
+  setPolicyForm(form ){
     this.claimForm.controls.policy.patchValue(form.value)
     }
   
@@ -110,7 +110,7 @@ export class FormServiceInsurance {
       return this.claimForm.controls.policy
   }
 
-  setAdditionalPack(pack:any){
+  setAdditionalPack(pack ){
     this.additionalPack = pack;
   }
 

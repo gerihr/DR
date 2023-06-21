@@ -10,8 +10,8 @@ import { authService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isAdmin:any;
-  isLoggedIn:any;
+  isAdmin ;
+  isLoggedIn ;
 
   constructor(public router: Router, public authService: authService) {
    }

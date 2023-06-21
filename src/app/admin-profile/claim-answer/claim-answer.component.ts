@@ -14,7 +14,7 @@ import { sharedService } from 'src/app/services/sharedService.service';
 })
 export class ClaimAnswerComponent implements OnInit {
   declined:boolean = false;
-  form:any;
+  form ;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
   private claimsService: ClaimService, 
   private dialog: MatDialog, 
@@ -48,7 +48,7 @@ export class ClaimAnswerComponent implements OnInit {
         }
       })
     )
-    .subscribe((res:any) =>{
+    .subscribe((res ) =>{
       this.sharedService.isLoading(false);
       this.tostrService.success(res.error.text)
       this.dialog.closeAll();

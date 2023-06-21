@@ -18,7 +18,7 @@ export class MyProfileComponent implements OnInit, AfterViewInit {
   titular: any;
   children : any;
   titularHasPolicy: any;
-  titularData:any;
+  titularData ;
 
   constructor(private router: Router,private tostrService: ToastrService, private policyService: PolicyService, public sharedService: sharedService) { }
 
@@ -39,7 +39,7 @@ export class MyProfileComponent implements OnInit, AfterViewInit {
     this.isEditing=!this.isEditing
   }
 
-  toMyClaims(egn:any){
+  toMyClaims(egn ){
     this.router.navigate(['/my-claims',  btoa(egn) ]);
   }
 
@@ -60,9 +60,9 @@ export class MyProfileComponent implements OnInit, AfterViewInit {
       })
     )
     .subscribe(
-      (res:any) => {
-        this.titularData = res.filter((p:any) => p.insuredId.egn === egn);
-        this.children = res.filter((p:any) => p.insuredId.egn !== egn);
+      (res ) => {
+        this.titularData = res.filter((p ) => p.insuredId.egn === egn);
+        this.children = res.filter((p ) => p.insuredId.egn !== egn);
         this.sharedService.setUserClaimsInformation(res);
 
         if(this.titularData.length==0){
@@ -81,7 +81,7 @@ export class MyProfileComponent implements OnInit, AfterViewInit {
             })
           )
           .subscribe(
-            (res:any) => {
+            (res ) => {
             this.titular = res;
             this.sharedService.isLoading(false);
             }

@@ -16,8 +16,20 @@ export class authService {
 
     constructor(private http: HttpClient, private router: Router){}
 
-    login(loginForm:any){
+    login(loginForm ){
       return  this.http.post('/v1/login', loginForm )
+    }
+
+    getAdmins(){
+      return this.http.get('/v1/get-admins')
+    }
+
+    addAdmin(newAdmin ){
+      return  this.http.post('/v1/new-admin', newAdmin )
+    }
+
+    deleteAdmin(id ){
+      return  this.http.post('/v1/delete-admin', id )
     }
 
     logout(){
@@ -34,4 +46,5 @@ export class authService {
     adminCheck(bool:boolean){
       this.isAdmin.next(bool);
     }
+
 }

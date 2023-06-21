@@ -18,7 +18,7 @@ export class GuardianDataComponent implements OnInit {
     private customValidator: CustoValidator) {
   }
 
-  form:any;
+  form ;
 
   ngOnInit(): void {
     this.form = new FormGroup({

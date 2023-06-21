@@ -7,11 +7,11 @@ import { AbstractControl, ValidatorFn } from "@angular/forms";
   })
 export class ClaimService {
 
-    currentClaimID:any;
+    currentClaimID ;
 
     constructor(private http: HttpClient){}
 
-    newClaim(claimForm:any){
+    newClaim(claimForm ){
       return  this.http.post('/v1/claim', claimForm )
     }
 
@@ -19,19 +19,19 @@ export class ClaimService {
         return  this.http.get('/v1/claims' )
     }
     
-    getClaimById(id:any){
+    getClaimById(id ){
         return  this.http.get('/v1/claim/'+id )
     }
 
-    getClaimByEgn(egn:any){
+    getClaimByEgn(egn ){
         return  this.http.get('/v1/claims-user/'+egn )
     }
 
-    updateClaimStatus(claimStatusForm:any, id:any){
+    updateClaimStatus(claimStatusForm , id ){
         return  this.http.put('/v1//claim-status/'+id, claimStatusForm )
     }
 
-    setCurrentClaimdId(id:any){
+    setCurrentClaimdId(id ){
         this.currentClaimID=id;
     }
 

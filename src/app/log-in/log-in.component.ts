@@ -18,22 +18,22 @@ export class LogInComponent implements OnInit {
   constructor(private router: Router, private authService: authService,private tostrService: ToastrService, private sharedService: sharedService) { }
 
   show:boolean=false;
-  form:any;
-  formAdmin:any
+  form ;
+  formAdmin 
   typesArray = ["админ", "потребител"];
-  isFormShowed:any;
-  type:any;
+  isFormShowed ;
+  type ;
 
   ngOnInit(): void {
     this.isFormShowed = false;
     this.type=this.typesArray[1];
     this.form = new FormGroup({
-      egn: new FormControl ("", {validators:[Validators.required, CustoValidator.personalId()]}),
+      idNumber: new FormControl ("", {validators:[Validators.required, CustoValidator.personalId()]}),
       code: new FormControl ("", Validators.required)
   });
 
   this.formAdmin = new FormGroup({
-    egn: new FormControl ("", {validators:[Validators.required]}),
+    idNumber: new FormControl ("", {validators:[Validators.required]}),
     code: new FormControl ("", Validators.required)
 });
   }
@@ -43,7 +43,7 @@ export class LogInComponent implements OnInit {
     console.log(this.form)
   }
 
-  setType(type:any){
+  setType(type ){
     this.type=type
   }
 
@@ -63,7 +63,7 @@ export class LogInComponent implements OnInit {
         }
       })
     )
-    .subscribe((res:any)=>{
+    .subscribe((res )=>{
       if(res.type === 'insurer'){
         sessionStorage.setItem('UserType', "insurer"); 
         sessionStorage.setItem('InsurerData', res.idNumber)

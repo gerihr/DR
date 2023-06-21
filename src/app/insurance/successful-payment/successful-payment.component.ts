@@ -11,8 +11,8 @@ export class SuccessfulPaymentComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private sharedService: sharedService) { }
 
-  policyNum:any;
-  newRegistration:any;
+  policyNum ;
+  newRegistration ;
 
   ngOnInit(): void {
 

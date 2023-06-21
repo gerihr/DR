@@ -81,8 +81,7 @@
   }
   
   .overlay{
-    display: block;
-    position: fixed;
+    display: inherit;
     background-color: rgba(0,0,0,0.5);
     opacity: 0.5;
     pointer-events: none; 

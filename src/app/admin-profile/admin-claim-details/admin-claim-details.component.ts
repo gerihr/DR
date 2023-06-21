@@ -16,10 +16,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdminClaimDetailsComponent implements OnInit, AfterViewInit{
 
-  claimData:any;
-  claimId:any;
-  maxLimit:any;
-  file_store:any=[]
+  claimData;
+  claimId;
+  maxLimit;
+  file_store:any =[]
   constructor(public dialog: MatDialog,
     private route: ActivatedRoute,
     private claimsService: ClaimService, 
@@ -29,6 +29,9 @@ export class AdminClaimDetailsComponent implements OnInit, AfterViewInit{
 
 
   ngOnInit(){
+    this.route.paramMap.subscribe((params) => {
+      this.claimId = params.get('id');
+    });
     // let claimId=this.claimsService.getCurrentClaimdId();
     // if(claimId!==undefined){
     //   this.claimsService.getClaimById(claimId).subscribe(res=>{
@@ -43,9 +46,6 @@ export class AdminClaimDetailsComponent implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit(){ 
-    this.route.paramMap.subscribe((params) => {
-      this.claimId = params.get('id');
-    });
 
     this.claimsService.getClaimById(this.claimId).pipe(
       delay(0),
@@ -61,7 +61,7 @@ export class AdminClaimDetailsComponent implements OnInit, AfterViewInit{
         }
         
       })
-    ).subscribe((res:any)=>{
+    ).subscribe((res:any )=>{
         this.claimData=res.claim;
         this.file_store=res.claim.files;
         this.maxLimit=res.maxLimitValue;
@@ -69,7 +69,7 @@ export class AdminClaimDetailsComponent implements OnInit, AfterViewInit{
       })
   }
 
-  base64ToArrayBuffer(file:any) {
+  base64ToArrayBuffer(file:any ) {
     var binaryString = atob(file.base64);
     var bytes = new Uint8Array(binaryString.length);
     for (var i = 0; i < binaryString.length; i++) {
@@ -94,10 +94,10 @@ export class AdminClaimDetailsComponent implements OnInit, AfterViewInit{
     });
   }
 
-  previewFile(file:any){
+  previewFile(file:any ){
     let base64str=file.base64;
-    var win:any = window.open();
-    win.document.write('<iframe src="' + base64str  + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
+    var win  = window.open();
+    window.document.write('<iframe src="' + base64str  + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
   }
 
 }

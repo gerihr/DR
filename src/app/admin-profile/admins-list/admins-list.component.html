@@ -1,0 +1,71 @@
+<section class="section">
+    <div class="mat-elevation-z8" >
+        <div class="wrapper-subheader" *ngIf="showAddAdminForm==false">
+            <mat-form-field style="margin-left:5%">
+                <mat-label>Намери админ</mat-label>
+                <input matInput (keyup)="applyFilter($event)" #input>
+            </mat-form-field>
+              
+            <button mat-mini-fab color="accent" (click)="addAdmin()" aria-label="Example icon button with a plus one icon">
+                <mat-icon>person_add</mat-icon>
+            </button>
+        </div>
+
+              <!-- add new admin -->
+        <div *ngIf="showAddAdminForm==true" style="display: flex; align-items: center; justify-content: center;">
+            <section class="section">
+                <div class="container">
+                    <h2 class="add-admin-title">Добави админ</h2>
+            <form [formGroup]="form" style="display: flex;flex-direction: column;">
+            <mat-form-field class="example-full-width field" >
+                <mat-label>Потребителско име
+                </mat-label>
+                <input  formControlName="username" matInput minlength="5" maxlength="15" minlength="5">
+              </mat-form-field>
+              <mat-form-field class="example-full-width field" >
+                <mat-label>Парола
+                </mat-label>
+                <input  formControlName="password" matInput pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$">
+                <mat-error *ngIf="this.form.controls.password.errors">
+                  Паролата не отговаря на изискванията
+                </mat-error>
+              </mat-form-field>
+              <button class="btn continue" type="submit" value="Log in" (click)="sendNewAdmin()">
+                Добави админ
+              </button>
+            </form>
+            </div>
+            </section>
+        </div>
+
+  <div *ngIf="showAddAdminForm==false">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+        <!-- Position Column -->
+        <ng-container matColumnDef="id_number">
+          <th mat-header-cell *matHeaderCellDef style="padding-left:150px"> Админ </th>
+          <td mat-cell *matCellDef="let element" style="padding-left:150px"> {{element.idNumber}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef> Изтрии </th>
+          <td mat-cell *matCellDef="let element, let i=index">
+             <div>
+             <button mat-icon-button color="warn" (click)="delete(element.id, i)">
+            <mat-icon>close</mat-icon>
+          </button></div> </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+        <!-- Row shown when there is no matching data. -->
+        <!-- <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr> -->
+      </table>
+  </div>
+
+    </div>
+</section>

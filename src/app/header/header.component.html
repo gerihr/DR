@@ -10,6 +10,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="/">Начало</a></li>
           <li><a class="nav-link scrollto" (click)="this.router.navigate(['/admin-claims'])" *ngIf="(authService.loggedIn$ | async) && (authService.isAdmin$ | async)">Заявени претенции</a></li>
+          <li><a class="nav-link scrollto" (click)="this.router.navigate(['/admin-list'])" *ngIf="(authService.loggedIn$ | async) && (authService.isAdmin$ | async)">Списък с админи</a></li>
           <li><a class="nav-link scrollto" (click)="this.router.navigate(['/my-profile'])" *ngIf="(authService.loggedIn$ | async) && !(authService.isAdmin$ | async)">Моя профил</a></li>
           <li><a class="getstarted scrollto" (click)="this.router.navigate(['/insurerData'])" *ngIf="!(authService.isAdmin$ | async)">Направи застарховка</a></li>
           <li><a class="nav-link scrollto" (click)="this.router.navigate(['/login'])" *ngIf="!(authService.loggedIn$ | async)"><mat-icon>perm_identity</mat-icon>Вход</a></li>

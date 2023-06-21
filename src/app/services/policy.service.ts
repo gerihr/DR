@@ -9,7 +9,7 @@ export class PolicyService {
     constructor(private http: HttpClient){}
 
 
-    savePolicy(policyData:any){
+    savePolicy(policyData ){
         return  this.http.post('/v1/policy', policyData)
     }
 

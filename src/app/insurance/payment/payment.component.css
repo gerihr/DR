@@ -16,11 +16,12 @@
 }
 
 .card.box1 {
-    width: 350px;
-    height: 500px;
+    /* width: 350px;
+    height: 500px; */
     background-color:#EF814F;
     color: white;
-    border-radius: 0
+    border-radius: 0;
+    visibility: hidden
 }
 
 .card.box2 {

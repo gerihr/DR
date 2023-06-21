@@ -19,8 +19,8 @@ export class InsurerDataComponent implements OnInit {
     private customValidator: CustoValidator) {
   }
   
-  form:any;
-  isAdult:any=false;
+  form ;
+  isAdult =false;
   ngOnInit(): void {
     this.formServiceInsurance.getForm();
     this.form = new FormGroup({

@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-elevation-z8{
+      padding-top: 10px;
+  }
+  
+  tr:hover{
+      background-color: #f8c6b0;
+      cursor: pointer;
+  }
+  
+  .header-row{
+      background-color: white !important;
+  }
+
+  .wrapper-subheader{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+  }
+
+   .container {
+    width: 400px;
+    margin: auto;
+    padding: 36px 48px 48px 48px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 11px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}

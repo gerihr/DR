@@ -19,8 +19,8 @@ export class StartInsuranceComponent implements OnInit {
 
   minDate:Date=new Date();
   maxDate:Date = new Date(new Date().getFullYear()+0,11,31)
-  form:any;
-  additionalPack:any
+  form ;
+  additionalPack 
   faToothIcon = faTooth;
   faHospitalIcon = faHospital;
   faBandageIcon = faBandage;
@@ -33,13 +33,16 @@ export class StartInsuranceComponent implements OnInit {
   });
   }
 
-  chosenDate($event:any){
-    let endOfInsurance = this.setOneYear($event.value);
-    console.log(endOfInsurance)
-    this.form.controls.endDate.setValue(endOfInsurance);
+  chosenDate($event ){
+    // this.form.controls.endDate.setValue($event.value);
+    // let startDate = $event.value
+    const aYearFromStart = new Date($event.value);
+    aYearFromStart.setFullYear(aYearFromStart.getFullYear() + 1);
+    this.form.controls.endDate.setValue(aYearFromStart);
+    console.log(this.form)
   }
 
-  setOneYear(date:any){
+  setOneYear(date ){
     date.setFullYear(date.getFullYear() + 1);
     return date;
   }

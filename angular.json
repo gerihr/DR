@@ -70,6 +70,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "digital-health-insurance:build",
+            "ssl": true,
+            "sslKey": "C:/xampp/apache/cert/localhost/server.key",
+            "sslCert": "C:/xampp/apache/cert/localhost/server.crt"
+          },
           "configurations": {
             "production": {
               "browserTarget": "digital-health-insurance:build:production"
