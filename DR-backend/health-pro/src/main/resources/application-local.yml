@@ -1,0 +1,26 @@
+# Spring configuration
+spring:
+  #  mail
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: geri.g.hristozova@gmail.com
+    password: rsdopungltovyiea
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+  # Database configurations
+  datasource:
+    url: jdbc:postgresql://localhost:5432/
+    username: postgres
+    password: 1392000g
+  # Flyway configuration
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+        lob: non_contextual_creation = true
+  servlet:
+    multipart:
+      max-request-size: 2MB
+      max-file-size: 2MB
